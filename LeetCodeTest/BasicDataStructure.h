@@ -29,4 +29,9 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {};
 };
 
+
+enum USING_FUNC_OPT{
+    E_ITERATIVE = 0,
+    E_RECURSIVE,
+};
 #endif /* BasicDataStructure_h */

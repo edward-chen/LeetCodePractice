@@ -10,8 +10,7 @@
 #define C092ReverseLinkedListII_hpp
 
 #include <stdio.h>
-#include "C206ReverseLinkedList.hpp"
-
+#include "BasicDataStructure.h"
 
 namespace ReverseLinkedListII {
     class Solution {
@@ -24,10 +23,8 @@ namespace ReverseLinkedListII {
         }
         
     public:
-        
         Solution(unsigned int size = 10);
         ~Solution();
-        
         
         
         ListNode *getHead() { return m_pHead; }
@@ -35,6 +32,10 @@ namespace ReverseLinkedListII {
         
         void dumpList(ListNode *pNode, const char *pszMsg);
     
+        ListNode *reverseBetweenFunc(ListNode *head, int m, int n, unsigned char opt);
+        
+        ListNode *reverseBetweenRecursive(ListNode *head, int m, int n);
+        ListNode *reverseBetweenRecursive(ListNode *head, ListNode *pPrev, ListNode **ppTail, int rest);
         ListNode *reverseBetween(ListNode *head, int m, int n);
     };
 }

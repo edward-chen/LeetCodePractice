@@ -28,9 +28,6 @@ namespace ReverseLinkedList {
         ListNode *reverseList(ListNode *head, ListNode *pPrev);
         
     public:
-        static const unsigned char OPT_ITERATIVE = 0;
-        static const unsigned char OPT_RECURSIVE = 1;
-        
         Solution(unsigned int size = 10);
         ~Solution();
         

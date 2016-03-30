@@ -13,11 +13,10 @@ using namespace ReverseLinkedList;
 ListNode *Solution::reverseListFunc(ListNode *head, unsigned char opt) {
     ListNode *pNode = NULL;
     switch (opt) {
-        case OPT_ITERATIVE:
+        case E_ITERATIVE:
             pNode = reverseList(head);
             break;
-        case OPT_RECURSIVE:
-            // TODO: need to implement it;
+        case E_RECURSIVE:
             pNode = reverseList(head, NULL);
             break;
         default:
@@ -30,6 +29,7 @@ ListNode *Solution::reverseListFunc(ListNode *head, unsigned char opt) {
 
 ListNode *Solution::reverseList(ListNode *head, ListNode *pPrev) {
     // 8ms seconds (beats 13.13%)
+    // Recursive way
     ListNode *pCurr = head;
     if (!pCurr) {
         return pCurr;
@@ -43,6 +43,7 @@ ListNode *Solution::reverseList(ListNode *head, ListNode *pPrev) {
 
 ListNode *Solution::reverseList(ListNode *head) {
     // 8ms (beats 13.13%)
+    // iterative way
     ListNode *pCurr = NULL, *pPrev = NULL;
     if (!head) {
         return head;

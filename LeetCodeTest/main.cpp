@@ -18,6 +18,7 @@
 #include "C114BinaryTreePreorderTraversal.hpp"
 #include "C145BinaryTreePostorderTraversal.hpp"
 #include "C206ReverseLinkedList.hpp"
+#include "C092ReverseLinkedListII.hpp"
 
 void printHeader(const char *msg);
 void printTail(const char *msg);
@@ -303,11 +304,11 @@ void test206_ReverseLinkedList() {
     printHeader("## Start test 206: reverse Linked list");
     
     ReverseLinkedList::Solution sol;
-    ListNode *pNode = sol.reverseListFunc(sol.getHead(), ReverseLinkedList::Solution::OPT_ITERATIVE);
+    ListNode *pNode = sol.reverseListFunc(sol.getHead(), E_ITERATIVE);
     sol.dumpList(pNode, "reverse linked list (iterative)");
     
     sol.setHead(pNode);
-    pNode = sol.reverseListFunc(sol.getHead(), ReverseLinkedList::Solution::OPT_RECURSIVE);
+    pNode = sol.reverseListFunc(sol.getHead(), E_RECURSIVE);
     sol.dumpList(pNode, "reverse linked list (recursive)");
     
     printTail("## End test 206: reverse Linked list");
@@ -316,7 +317,24 @@ void test206_ReverseLinkedList() {
 void test092_ReverseLinkedListII() {
     printHeader("## Start test 092: reverse Linked list II");
     
-    ReverseLinkedList::Solution sol;
+    ReverseLinkedListII::Solution sol;
+    int m = 3, n = 5;
+    ListNode *pNode;
+    pNode = sol.reverseBetweenFunc(sol.getHead(), m, n, E_ITERATIVE);
+    
+    char msg[100] = {0};
+    sprintf(msg, "reverse linked list II @ (%d, %d)", m, n);
+    
+    sol.dumpList(pNode, msg);
+    
+    sol.setHead(pNode);
+    
+    //m = 3, n = 10;
+    pNode = sol.reverseBetweenFunc(sol.getHead(), m, n, E_RECURSIVE);
+    
+    sprintf(msg, "reverse linked list II @ (%d, %d)", m, n);
+    sol.dumpList(pNode, msg);
+    
     
     printTail("## End test 206: reverse Linked list II");
 }
