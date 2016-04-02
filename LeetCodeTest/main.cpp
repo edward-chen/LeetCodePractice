@@ -11,6 +11,7 @@
 
 #include "C001TwoSum.hpp"
 #include "C002Add2Nums.hpp"
+#include "C003LengthOfLongestSubstring.hpp"
 #include "C035SearchInsertPosition.hpp"
 #include "C094BinaryTreeInorderTraversal.hpp"
 #include "C104MaxDepthOfBTree.hpp"
@@ -27,6 +28,9 @@ void initVector(vector<int> &input, const int *pArray);
 
 void test001_TwoSum(int *pArray, int nArraySize, int target);
 void test002_Add2Nums(int *pA, int *pB, int nSizeA, int nSizeB);
+void test003_LengthOfLongestSubString();
+
+
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
 
@@ -89,11 +93,14 @@ int main(int argc, const char * argv[]) {
         // Test
         testBinaryTreeBasicFunc(array, nSize);
     }
-    */
+    
     {
         test206_ReverseLinkedList();
         test092_ReverseLinkedListII();
     }
+    */
+    
+    test003_LengthOfLongestSubString();
     
     return 0;
 }
@@ -206,6 +213,23 @@ void test002_Add2Nums(int *pA, int *pB, int nSizeA, int nSizeB) {
     
     printTail("## End test 002: add 2 nums");
     printf("\n");
+}
+
+void test003_LengthOfLongestSubString() {
+    string input = "au";
+    
+    printHeader("## Start test 003: length of longest subString");
+    
+    
+    LengthOfLongestSubstring::Solution sol;
+    //int length = sol.lengthOfLongestSubstring(input);
+    int length = sol.lengthOfLongestSubstringFunc(input, E_ITERATIVE);
+    
+    printf("length of longest sub string of %s is: %d\n", input.c_str(), length);
+
+    printTail("## End test 003: length of longest subString");
+    
+
 }
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target) {

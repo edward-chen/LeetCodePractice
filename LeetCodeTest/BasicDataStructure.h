@@ -33,5 +33,6 @@ struct TreeNode {
 enum USING_FUNC_OPT{
     E_ITERATIVE = 0,
     E_RECURSIVE,
+    E_DP,           // Dynamic programming
 };
 #endif /* BasicDataStructure_h */
