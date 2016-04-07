@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <algorithm>
 #include "BasicDataStructure.h"
 
 using namespace std;
@@ -52,7 +53,7 @@ namespace BinaryTree {
         int getHeight(TreeNode *pLeaf);
         
         void traversal(vector <int> &orderVal, int nDfsOption = DFS_PREORDER);
-        
+        TreeNode *invertTree(TreeNode *root);
         // BFS (Breadth-first)
         // ???
         

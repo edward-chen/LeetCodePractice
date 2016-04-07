@@ -206,6 +206,24 @@ void CBinaryTree::traversal(vector <int> &orderVal, int nDfsOption) {
     }
 }
 
+TreeNode *CBinaryTree::invertTree(TreeNode *root) {
+    if (root) {
+        /*
+        TreeNode *pTmp = root->left;
+        root->left = root->right;
+        root->right = pTmp;
+        */
+        swap(root->left, root->right);
+        //root->left = invertTree(root->left);
+        invertTree(root->left);
+        //root->right = invertTree(root->right);
+        invertTree(root->right);
+
+    }
+    return root;
+}
+
+
 void CBinaryTree::printTree() {
     int nHeight = getHeight(m_pRoot);
     printTreeByNode(m_pRoot, nHeight);

@@ -349,13 +349,11 @@ void test226_InvertBinaryTree(int *pArray, int nArraySize) {
     printf ("before invert, ");
     bTree.traversal(output, CBinaryTree::BFS);
     
-    //dumpVector(output, "b4 invert");
-    
     TreeNode *pNode = sol.invertTree(bTree.getRoot());
+    //bTree.invertTree(bTree.getRoot());
+    
     printf ("after  invert, ");
     bTree.traversal(output, CBinaryTree::BFS);
-    
-    //dumpVector(output, "after invert");
     
     printTail("## End test 226: Invert BTree");
     
