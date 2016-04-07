@@ -1,3 +1,4 @@
+
 //
 //  C003LengthOfLongestSubstring.cpp
 //  LeetCodeTest
@@ -35,14 +36,51 @@ int Solution::lengthOfLongestSubstringFunc(string s, unsigned short opt) {
 }
 
 int Solution::lengthOfLongestSubstringDp(string s) {
-    int nLen = 0;
+    // 12 ~ 16 ms (beats: 97.04% ~ 61.72%)
+    int nSubLen = 0;
+    int nStrlen = s.length();
+    const int MAP_SIZE  = 256;
+    int strMapping[MAP_SIZE] = {0};
     
     do {
+        if (1 >= nStrlen) {
+            nSubLen = nStrlen;
+            break;
+        }
+        
+        
+        memset (strMapping, -1, MAP_SIZE * sizeof(int));
         // TODO: need to implement code here
+        int i = 0, nCurrLen = 0, nCurrStartPos = -1;
+        for (; i < nStrlen; i++) {
+            unsigned int val = s[i];
+            if (strMapping[val] == -1) {
+                strMapping[val] = i;
+                nCurrLen++;
+            } else {
+                if (nCurrLen > nSubLen) nSubLen = nCurrLen;
+                
+                if (nCurrStartPos <= strMapping [val]) {
+                    if ((i - 1) == strMapping[val]) {
+                        nCurrStartPos = i;
+                    } else {
+                        nCurrStartPos = strMapping[val] + 1;
+                    }
+                    
+                    nCurrLen = i - nCurrStartPos + 1;
+                } else {
+                    nCurrLen++;
+                }
+                strMapping[val] = i;
+            }
+        }
+        
+        if (!nSubLen || nSubLen <= nCurrLen) nSubLen = nCurrLen;
+    
     } while (false);
     
     
-    return nLen;
+    return nSubLen;
 }
 
 int Solution::lengthOfLongestSubstring(string s) {

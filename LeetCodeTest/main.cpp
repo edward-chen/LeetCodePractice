@@ -216,7 +216,7 @@ void test002_Add2Nums(int *pA, int *pB, int nSizeA, int nSizeB) {
 }
 
 void test003_LengthOfLongestSubString() {
-    string input = "au";
+    string input = "anviaj"; //"tmmzuxt";//"aaca"; //"eee";
     
     printHeader("## Start test 003: length of longest subString");
     
@@ -226,7 +226,12 @@ void test003_LengthOfLongestSubString() {
     int length = sol.lengthOfLongestSubstringFunc(input, E_ITERATIVE);
     
     printf("length of longest sub string of %s is: %d\n", input.c_str(), length);
+    
+    length = sol.lengthOfLongestSubstringFunc(input, E_DP);
+    
 
+    printf("length of longest sub string (dp) of %s is: %d\n", input.c_str(), length);
+    
     printTail("## End test 003: length of longest subString");
     
 
