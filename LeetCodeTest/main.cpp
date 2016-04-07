@@ -13,11 +13,14 @@
 #include "C002Add2Nums.hpp"
 #include "C003LengthOfLongestSubstring.hpp"
 #include "C035SearchInsertPosition.hpp"
+
 #include "C094BinaryTreeInorderTraversal.hpp"
 #include "C104MaxDepthOfBTree.hpp"
 #include "C111MinDepthOfBTree.hpp"
 #include "C114BinaryTreePreorderTraversal.hpp"
 #include "C145BinaryTreePostorderTraversal.hpp"
+#include "C226InvertBinaryTree.hpp"
+
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
 
@@ -38,7 +41,8 @@ void test094_InorderTraversalBTree(int *pArray, int nArraySize);
 void test104_MaxDepthOfBTree(int *pArray, int nArraySize);
 void test111_MinDepthOfBTree(int *pArray, int nArraySize);
 void test114_PreorderTraversalBTree(int *pArray, int nArraySize);
-void test145_PostorderTraversalBTree(int *pArra, int nArraySize);
+void test145_PostorderTraversalBTree(int *pArray, int nArraySize);
+void test226_InvertBinaryTree(int *pArray, int nArraySize);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -75,6 +79,7 @@ int main(int argc, const char * argv[]) {
         int target = 2;
         test035_SearchInsertPosition(array, nSize, target);
     }
+    */
     
     {
         int array [] = {5, 1, 3, 10, 9, 7};
@@ -89,18 +94,22 @@ int main(int argc, const char * argv[]) {
         test114_PreorderTraversalBTree(array, nSize);
         test094_InorderTraversalBTree(array, nSize);
         test145_PostorderTraversalBTree(array, nSize);
+    
+        test226_InvertBinaryTree(array, nSize);
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
     }
     
+     /*
     {
         test206_ReverseLinkedList();
         test092_ReverseLinkedListII();
     }
-    */
+    
     
     test003_LengthOfLongestSubString();
+    */
     
     return 0;
 }
@@ -326,7 +335,31 @@ void test145_PostorderTraversalBTree(int *pArray, int nArraySize) {
     dumpVector(output, "output");
     
     
-    printTail("## End test 115: post order traversal of BTree");
+    printTail("## End test 145: post order traversal of BTree");
+}
+
+void test226_InvertBinaryTree(int *pArray, int nArraySize) {
+    CBinaryTree bTree;
+    BT_InvertBinaryTree::Solution sol;
+    vector <int> output;
+    
+    printHeader("## Start test 226: Invert BTree");
+    
+    bTree.initBinaryTree(pArray, nArraySize);
+    printf ("before invert, ");
+    bTree.traversal(output, CBinaryTree::BFS);
+    
+    //dumpVector(output, "b4 invert");
+    
+    TreeNode *pNode = sol.invertTree(bTree.getRoot());
+    printf ("after  invert, ");
+    bTree.traversal(output, CBinaryTree::BFS);
+    
+    //dumpVector(output, "after invert");
+    
+    printTail("## End test 226: Invert BTree");
+    
+    
 }
 
 void test206_ReverseLinkedList() {
