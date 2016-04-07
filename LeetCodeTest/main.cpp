@@ -20,6 +20,7 @@
 #include "C114BinaryTreePreorderTraversal.hpp"
 #include "C145BinaryTreePostorderTraversal.hpp"
 #include "C226InvertBinaryTree.hpp"
+#include "C100SameTree.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -43,6 +44,8 @@ void test111_MinDepthOfBTree(int *pArray, int nArraySize);
 void test114_PreorderTraversalBTree(int *pArray, int nArraySize);
 void test145_PostorderTraversalBTree(int *pArray, int nArraySize);
 void test226_InvertBinaryTree(int *pArray, int nArraySize);
+void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize);
+
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -85,6 +88,10 @@ int main(int argc, const char * argv[]) {
         int array [] = {5, 1, 3, 10, 9, 7};
         int nSize = sizeof(array) / sizeof (int);
         
+        int aArray [] = {5, 1, 3, 10, 9, 7};
+        int bArray [] = {5, 3, 1, 10, 9, 7};
+        int nbSize = sizeof(bArray) / sizeof (int);
+        
         
         
         test104_MaxDepthOfBTree(array, nSize);
@@ -95,7 +102,10 @@ int main(int argc, const char * argv[]) {
         test094_InorderTraversalBTree(array, nSize);
         test145_PostorderTraversalBTree(array, nSize);
     
-        test226_InvertBinaryTree(array, nSize);
+        //test226_InvertBinaryTree(array, nSize);
+        
+        test100_SameTree(array, nSize, aArray, nSize);
+        test100_SameTree(array, nSize, bArray, nbSize);
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
@@ -356,9 +366,27 @@ void test226_InvertBinaryTree(int *pArray, int nArraySize) {
     bTree.traversal(output, CBinaryTree::BFS);
     
     printTail("## End test 226: Invert BTree");
-    
-    
 }
+
+void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize) {
+    CBinaryTree bATree, bBTree;
+    
+    printHeader("## Start test 100: Is same tree");
+    vector <int> outputA, outputB;
+    
+    bATree.initBinaryTree(pArray, nPSize);
+    bBTree.initBinaryTree(qArray, nQSize);
+    BT_SameTree::Solution sol;
+    
+
+    bool bRet = sol.isSameTree(bATree.getRoot(), bBTree.getRoot());
+    printf("Is same tree: %s\n", bRet ? "Yes" : "No");
+    bATree.traversal(outputA);
+    bBTree.traversal(outputB);
+    
+    printHeader("## End test 100: Is same tree");
+}
+
 
 void test206_ReverseLinkedList() {
     printHeader("## Start test 206: reverse Linked list");
