@@ -21,6 +21,7 @@
 #include "C145BinaryTreePostorderTraversal.hpp"
 #include "C226InvertBinaryTree.hpp"
 #include "C100SameTree.hpp"
+#include "C101SymmetricTree.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -45,7 +46,7 @@ void test114_PreorderTraversalBTree(int *pArray, int nArraySize);
 void test145_PostorderTraversalBTree(int *pArray, int nArraySize);
 void test226_InvertBinaryTree(int *pArray, int nArraySize);
 void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize);
-
+void test101_SymmetricTree(int *pArray, int nArraySize);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -102,13 +103,22 @@ int main(int argc, const char * argv[]) {
         test094_InorderTraversalBTree(array, nSize);
         test145_PostorderTraversalBTree(array, nSize);
     
-        //test226_InvertBinaryTree(array, nSize);
+        test226_InvertBinaryTree(array, nSize);
         
         test100_SameTree(array, nSize, aArray, nSize);
         test100_SameTree(array, nSize, bArray, nbSize);
         
+        int sysArrayTest[] = {1, 2, 3, 3, 0, 2, 0};
+        //int sysArrayTest[] = {5,4,1,0,1,0,4,2,0,2,0};
+        
+        test101_SymmetricTree(sysArrayTest, sizeof(sysArrayTest)/sizeof(int));
+        
         // Test
         testBinaryTreeBasicFunc(array, nSize);
+    
+    
+        
+        
     }
     
      /*
@@ -385,6 +395,19 @@ void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize) {
     bBTree.traversal(outputB);
     
     printHeader("## End test 100: Is same tree");
+}
+
+void test101_SymmetricTree(int *pArray, int nSize) {
+    printHeader("## Start test 101: Is Symmetric Tree");
+    CBinaryTree bTree;
+    BT_SymmetricTree::Solution sol;
+    
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    bool bIsSymmetric = sol.isSymmetric(bTree.getRoot());
+    
+    
+    printf("Is Sysmmetric tree: %s\n", (bIsSymmetric) ? "Yes" : "No");
+    printTail("## End test 101: Is Symmetric Tree");
 }
 
 

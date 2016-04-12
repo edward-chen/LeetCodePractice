@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <list>
 #include <queue>
 #include <algorithm>
 #include "BasicDataStructure.h"
@@ -31,6 +32,8 @@ namespace BinaryTree {
         void traversalPostOrder(TreeNode *pLeaf, vector <int> &orderVal);
         void traversalBFS(TreeNode *pLeaf, vector <int> &orderVal);
         
+        
+        TreeNode *createTreeNode(int val);
     public:
         static const int DFS_PREORDER = 0;
         static const int DFS_INORDER = 1;
@@ -41,6 +44,7 @@ namespace BinaryTree {
         ~CBinaryTree();
         void initBinaryTree(const int *pArray, int nArraySize);
         void insertTreeNode(TreeNode **ppTreeNode, TreeNode *pNode);
+        void initBinaryTree_LCFormat(const int *pArray, unsigned int nArraySize);
         void destroyTree();
         void deleteLeaf(TreeNode **ppLeaf);
         
@@ -60,7 +64,23 @@ namespace BinaryTree {
         void printTree();
         void printTreeByNode(TreeNode *pNode, int height, int lvl = 0);
         
-        
+        void dumpTree();
+        void dumpVector(vector <int> &input, const char *pszMsg) {
+            printf("%s: {", pszMsg);
+            
+            int nSize = input.size();
+            for (int i = 0; i < nSize; i++) {
+                //input.push_back(pArray[i]);
+                
+                if (i != nSize - 1) {
+                    printf("%d, ", input[i]);
+                } else {
+                    printf("%d", input[i]);
+                }
+            }
+            printf("}\n");
+        }
+
         TreeNode * getRoot() { return m_pRoot; };
     };
 }

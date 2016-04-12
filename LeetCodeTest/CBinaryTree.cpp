@@ -40,6 +40,64 @@ void CBinaryTree::insertTreeNode(TreeNode **ppTreeNode, TreeNode *pNode) {
     }
 }
 
+TreeNode *CBinaryTree::createTreeNode(int val) {
+    TreeNode *pNode = NULL;
+    if (val) {
+        pNode = new TreeNode(val);
+    }
+    
+    return pNode;
+}
+
+void CBinaryTree::initBinaryTree_LCFormat(const int *pArray, unsigned int nArraySize) {
+    // Leet Code format array
+    //           1
+    //          / \
+    //         2   3
+    //            /
+    //           4
+    //            \
+    //             5
+    //
+    // The above binary tree is serialized as "{1,2,3,#,#,4,#,#,5}".
+    // input here will be ==================> "{1,2,3,0,0,4,0,0,5}". (0 means null here)
+    //
+    queue<TreeNode *> tmpQ;
+    int nLvlNodeCnt = 2;
+    int nRestSize = nArraySize;
+    
+    if (nRestSize) {
+        if (m_pRoot = createTreeNode(*(pArray++))) {
+            tmpQ.push(m_pRoot);
+        }
+        nRestSize--;
+    }
+    
+    while(nRestSize) {
+        int nNextLvlNodeCnt = 0;
+        for (int i = 0; i < nLvlNodeCnt / 2; i++) {
+            TreeNode *pNode = tmpQ.front();
+            tmpQ.pop();
+            
+            // handle left leaf
+            if (pNode->left = createTreeNode(*(pArray++))) {
+                tmpQ.push(pNode->left);
+                nNextLvlNodeCnt += 2;
+            }
+            nRestSize--;
+            
+            if (pNode->right = createTreeNode(*(pArray++))) {
+                tmpQ.push(pNode->right);
+                nNextLvlNodeCnt += 2;
+            }
+            nRestSize--;
+        }
+        
+        nLvlNodeCnt = nNextLvlNodeCnt;
+    }
+}
+
+
 CBinaryTree::~CBinaryTree() {
     destroyTree();
 }
