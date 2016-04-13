@@ -59,6 +59,7 @@ using namespace BinaryTree;
 using namespace std;
 
 void dumpVector(vector <int> &input, const char *pszMsg);
+void dumpArray(const int *pArray, const char *pszMsg, unsigned int nSize);
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -88,7 +89,6 @@ int main(int argc, const char * argv[]) {
     */
     
     {
-#if 0
         int array [] = {5, 1, 3, 10, 9, 7};
         int nSize = sizeof(array) / sizeof (int);
         
@@ -113,52 +113,13 @@ int main(int argc, const char * argv[]) {
         
         int sysArrayTest[] = {1, 2, 3, 3, 0, 2, 0};
         //int sysArrayTest[] = {5,4,1,0,1,0,4,2,0,2,0};
-        
+        //int a [] = {1, 2, 2, 3, 0, 0, 3, 4, 0, 0 ,4};
+        //int b [] = {1, 2, 2, 3, 0, 0, 3};
+        //int c [] = {1, 2, 2, 3, 5, 5, 3};
         test101_SymmetricTree(sysArrayTest, sizeof(sysArrayTest)/sizeof(int));
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
-#endif
-        {
-            vector <int> output;
-            int a [] = {1, 2, 3, 3, 0, 2, 0};
-            //int a [] = {1, 2, 2, 3, 0, 0, 3, 4, 0, 0 ,4};
-            
-            CBinaryTree bTree;
-            bTree.initBinaryTree_LCFormat(a, ARRAYSIZE(a, int));
-            bTree.traversal(output, CBinaryTree::DFS_PREORDER);
-            bTree.traversal(output, CBinaryTree::DFS_INORDER);
-            bTree.traversal(output, CBinaryTree::DFS_POSTORDER);
-            
-            test101_SymmetricTree(a, ARRAYSIZE(a,int));
-            
-            bTree.destroyTree();
-            
-            printf("\n----------------\n");
-            int b [] = {1, 2, 2, 3, 0, 0, 3};
-            bTree.initBinaryTree_LCFormat(b, ARRAYSIZE(b, int));
-            bTree.traversal(output, CBinaryTree::DFS_PREORDER);
-            bTree.traversal(output, CBinaryTree::DFS_INORDER);
-            bTree.traversal(output, CBinaryTree::DFS_POSTORDER);
-            
-            test101_SymmetricTree(b, ARRAYSIZE(b,int));
-            
-            bTree.destroyTree();
-            
-            printf("\n----------------\n");
-            int c [] = {1, 2, 2, 3, 5, 5, 3};
-            bTree.initBinaryTree_LCFormat(c, ARRAYSIZE(c, int));
-            bTree.traversal(output, CBinaryTree::DFS_PREORDER);
-            bTree.traversal(output, CBinaryTree::DFS_INORDER);
-            bTree.traversal(output, CBinaryTree::DFS_POSTORDER);
-            
-            test101_SymmetricTree(c, ARRAYSIZE(c,int));
-            
-            bTree.destroyTree();
-            
-        }
-        
-        
     }
     
      /*
@@ -204,6 +165,20 @@ void dumpVector(vector <int> &input, const char *pszMsg) {
         }
     }
     printf("}\n");
+}
+
+void dumpArray(const int *pArray, const char *pszMsg, unsigned int nSize) {
+    printf("%s: {", pszMsg);
+    
+    for (int i = 0; i < nSize; i++) {
+        if (i != nSize - 1) {
+            printf("%d, ", pArray[i]);
+        } else {
+            printf("%d", pArray[i]);
+        }
+    }
+    printf("}\n");
+
 }
 
 //-----------------------
@@ -442,6 +417,7 @@ void test101_SymmetricTree(int *pArray, int nSize) {
     CBinaryTree bTree;
     BT_SymmetricTree::Solution sol;
     
+    dumpArray(pArray, "input array: ", nSize);
     bTree.initBinaryTree_LCFormat(pArray, nSize);
     bool bIsSymmetric = sol.isSymmetric(bTree.getRoot());
     
