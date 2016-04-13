@@ -105,6 +105,7 @@ CBinaryTree::~CBinaryTree() {
 void CBinaryTree::destroyTree() {
     // TODO: need to implement code here
     deleteLeaf(&m_pRoot);
+    m_pRoot = NULL;
 }
 
 void CBinaryTree::deleteLeaf(TreeNode **ppLeaf) {
@@ -235,11 +236,11 @@ void CBinaryTree::traversal(vector <int> &orderVal, int nDfsOption) {
     
     switch (nDfsOption){
         case DFS_PREORDER:
-            printf("Traversal preOder: {");
+            printf("Traversal  preOder: {");
             traversalPreOrder(m_pRoot, orderVal);
             break;
         case DFS_INORDER:
-            printf("Traversal inOder: {");
+            printf("Traversal   inOder: {");
             traversalInOrder(m_pRoot, orderVal);
             break;
         case DFS_POSTORDER:

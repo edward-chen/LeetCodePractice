@@ -26,6 +26,8 @@
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
 
+#define ARRAYSIZE(array, type) sizeof (array) / sizeof(type)
+
 void printHeader(const char *msg);
 void printTail(const char *msg);
 
@@ -86,6 +88,7 @@ int main(int argc, const char * argv[]) {
     */
     
     {
+#if 0
         int array [] = {5, 1, 3, 10, 9, 7};
         int nSize = sizeof(array) / sizeof (int);
         
@@ -115,8 +118,45 @@ int main(int argc, const char * argv[]) {
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
-    
-    
+#endif
+        {
+            vector <int> output;
+            int a [] = {1, 2, 3, 3, 0, 2, 0};
+            //int a [] = {1, 2, 2, 3, 0, 0, 3, 4, 0, 0 ,4};
+            
+            CBinaryTree bTree;
+            bTree.initBinaryTree_LCFormat(a, ARRAYSIZE(a, int));
+            bTree.traversal(output, CBinaryTree::DFS_PREORDER);
+            bTree.traversal(output, CBinaryTree::DFS_INORDER);
+            bTree.traversal(output, CBinaryTree::DFS_POSTORDER);
+            
+            test101_SymmetricTree(a, ARRAYSIZE(a,int));
+            
+            bTree.destroyTree();
+            
+            printf("\n----------------\n");
+            int b [] = {1, 2, 2, 3, 0, 0, 3};
+            bTree.initBinaryTree_LCFormat(b, ARRAYSIZE(b, int));
+            bTree.traversal(output, CBinaryTree::DFS_PREORDER);
+            bTree.traversal(output, CBinaryTree::DFS_INORDER);
+            bTree.traversal(output, CBinaryTree::DFS_POSTORDER);
+            
+            test101_SymmetricTree(b, ARRAYSIZE(b,int));
+            
+            bTree.destroyTree();
+            
+            printf("\n----------------\n");
+            int c [] = {1, 2, 2, 3, 5, 5, 3};
+            bTree.initBinaryTree_LCFormat(c, ARRAYSIZE(c, int));
+            bTree.traversal(output, CBinaryTree::DFS_PREORDER);
+            bTree.traversal(output, CBinaryTree::DFS_INORDER);
+            bTree.traversal(output, CBinaryTree::DFS_POSTORDER);
+            
+            test101_SymmetricTree(c, ARRAYSIZE(c,int));
+            
+            bTree.destroyTree();
+            
+        }
         
         
     }

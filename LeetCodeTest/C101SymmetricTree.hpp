@@ -20,7 +20,11 @@ using namespace std;
 namespace BT_SymmetricTree {
     class Solution {
     private:
-        int traversalInOrder(TreeNode *root, vector<int> &output);
+        //int traversalInOrder(TreeNode *root, vector<int> &output);
+        //int traversalPreOrder(TreeNode *root, vector<int> &output);
+        //int traversalBFS(TreeNode *root, vector<int> &output);
+        bool isSameTree(TreeNode *p, TreeNode *q);
+        void invertTree(TreeNode *pNode);
     public:
         bool isSymmetric(TreeNode* root);
         bool isSymmetricRecursive(TreeNode *root);

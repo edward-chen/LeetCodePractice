@@ -9,6 +9,10 @@
 #ifndef BasicDataStructure_h
 #define BasicDataStructure_h
 
+#include <vector>
+#include <queue>
+#include <algorithm>
+
 /**
  * Definition for singly-linked list.
  */
