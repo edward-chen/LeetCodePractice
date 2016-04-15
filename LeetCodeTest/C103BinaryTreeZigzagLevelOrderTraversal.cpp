@@ -35,7 +35,7 @@ vector<vector<int>> Solution::zigzagLevelOrder(TreeNode *root) {
     vector<vector<int>> output;
     vector<int> currOutput;
     queue<TreeNode *> tmpQ;
-    list <int> currList;
+
     int nodeCnt = 2;
     bool bR2L = true;
     if (root) {
@@ -50,23 +50,13 @@ vector<vector<int>> Solution::zigzagLevelOrder(TreeNode *root) {
                 
                 nodeCnt += push2Queue(tmpQ, pNode->left);
                 nodeCnt += push2Queue(tmpQ, pNode->right);
-                if (bR2L) {
-                    currOutput.push_back(pNode->val);
-                } else {
-                    currList.push_back(pNode->val);
-                }
+                currOutput.push_back(pNode->val);
             }
             
             
             if (!bR2L) {
                 bR2L = true;
-                currList.reverse();
-                for (std::list<int>::iterator it = currList.begin(); it != currList.end(); it++) {
-                    int val = *it;
-                    currOutput.push_back(val);
-                }
-                
-                currList.clear();
+                std::reverse(currOutput.rbegin(), currOutput.rend());
             } else {
                 bR2L = false;
             }

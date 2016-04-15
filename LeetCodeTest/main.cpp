@@ -124,7 +124,9 @@ int main(int argc, const char * argv[]) {
         test101_SymmetricTree(sysArrayTest, sizeof(sysArrayTest)/sizeof(int));
         
         
-        int a [] = {1,2,3,4,5};//{3, 9, 20, 0, 0, 15, 7};
+        int a [] = {1,2,3,4,5};
+        //int b [] = {3, 9, 20, 0, 0, 15, 7};
+        //int c [] = {1,2,3,4,0,0,5};
         test102_BinaryTreeLevelOrderTraversal(a, ARRAYSIZE(a, int));
         
         test103_BinaryTreeZigzagLevelOrderTraversal(a,ARRAYSIZE(a, int));
