@@ -23,6 +23,7 @@
 #include "C100SameTree.hpp"
 #include "C101SymmetricTree.hpp"
 #include "C102_BinaryTreeLevelOrderTraversal.hpp"
+#include "C103BinaryTreeZigzagLevelOrderTraversal.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -51,6 +52,7 @@ void test226_InvertBinaryTree(int *pArray, int nArraySize);
 void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize);
 void test101_SymmetricTree(int *pArray, int nArraySize);
 void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nArraySize);
+void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nArraySize);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -122,9 +124,10 @@ int main(int argc, const char * argv[]) {
         test101_SymmetricTree(sysArrayTest, sizeof(sysArrayTest)/sizeof(int));
         
         
-        int a [] = {3, 9, 20, 0, 0, 15, 7};
+        int a [] = {1,2,3,4,5};//{3, 9, 20, 0, 0, 15, 7};
         test102_BinaryTreeLevelOrderTraversal(a, ARRAYSIZE(a, int));
         
+        test103_BinaryTreeZigzagLevelOrderTraversal(a,ARRAYSIZE(a, int));
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
@@ -476,6 +479,20 @@ void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nSize) {
 
 }
 
+void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nSize) {
+    printHeader("## Start test 103: Binary tree Zigzag level order Traversal");
+    CBinaryTree bTree;
+    BT_BFS_Zigzag::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<vector<int>> output = sol.zigzagLevelOrder(bTree.getRoot());
+    
+    dumpVectorVectorInt(output, "output: ");
+    
+    printTail("## End test 103: Binary tree Zigzag level order Traversal");
+    
+}
 
 void test206_ReverseLinkedList() {
     printHeader("## Start test 206: reverse Linked list");

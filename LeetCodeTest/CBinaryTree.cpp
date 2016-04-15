@@ -73,7 +73,7 @@ void CBinaryTree::initBinaryTree_LCFormat(const int *pArray, unsigned int nArray
         nRestSize--;
     }
     
-    while(nRestSize) {
+    while(nRestSize > 0) {
         int nNextLvlNodeCnt = 0;
         for (int i = 0; i < nLvlNodeCnt / 2; i++) {
             TreeNode *pNode = tmpQ.front();
@@ -84,13 +84,15 @@ void CBinaryTree::initBinaryTree_LCFormat(const int *pArray, unsigned int nArray
                 tmpQ.push(pNode->left);
                 nNextLvlNodeCnt += 2;
             }
-            nRestSize--;
+            
+            if (!(--nRestSize)) break;
             
             if (pNode->right = createTreeNode(*(pArray++))) {
                 tmpQ.push(pNode->right);
                 nNextLvlNodeCnt += 2;
             }
-            nRestSize--;
+            
+            if (!(--nRestSize)) break;
         }
         
         nLvlNodeCnt = nNextLvlNodeCnt;
