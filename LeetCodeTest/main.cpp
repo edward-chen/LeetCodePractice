@@ -22,6 +22,7 @@
 #include "C226InvertBinaryTree.hpp"
 #include "C100SameTree.hpp"
 #include "C101SymmetricTree.hpp"
+#include "C102_BinaryTreeLevelOrderTraversal.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -49,6 +50,7 @@ void test145_PostorderTraversalBTree(int *pArray, int nArraySize);
 void test226_InvertBinaryTree(int *pArray, int nArraySize);
 void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize);
 void test101_SymmetricTree(int *pArray, int nArraySize);
+void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nArraySize);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -59,6 +61,7 @@ using namespace BinaryTree;
 using namespace std;
 
 void dumpVector(vector <int> &input, const char *pszMsg);
+void dumpVectorVectorInt(vector <vector<int>> &input, const char *pszMsg);
 void dumpArray(const int *pArray, const char *pszMsg, unsigned int nSize);
 
 int main(int argc, const char * argv[]) {
@@ -118,6 +121,11 @@ int main(int argc, const char * argv[]) {
         //int c [] = {1, 2, 2, 3, 5, 5, 3};
         test101_SymmetricTree(sysArrayTest, sizeof(sysArrayTest)/sizeof(int));
         
+        
+        int a [] = {3, 9, 20, 0, 0, 15, 7};
+        test102_BinaryTreeLevelOrderTraversal(a, ARRAYSIZE(a, int));
+        
+        
         // Test
         testBinaryTreeBasicFunc(array, nSize);
     }
@@ -166,6 +174,33 @@ void dumpVector(vector <int> &input, const char *pszMsg) {
     }
     printf("}\n");
 }
+
+void dumpVectorVectorInt(vector <vector<int>> &input, const char *pszMsg) {
+    int i = 0, j;
+    printf("%s\n", pszMsg);
+    printf("[\n");
+    for (; i < input.size(); i++) {
+        printf("  [");
+        vector<int> innerInput = input[i];
+        for (j = 0; j < innerInput.size(); j++) {
+            printf("%d", innerInput[j]);
+            
+            if (j != innerInput.size() - 1) {
+                printf(",");
+            }
+            
+        }
+        
+        if (i != input.size() - 1) {
+            printf("],\n");
+        } else {
+            printf("]\n");
+        }
+    }
+    
+    printf("]\n");
+}
+
 
 void dumpArray(const int *pArray, const char *pszMsg, unsigned int nSize) {
     printf("%s: {", pszMsg);
@@ -424,6 +459,21 @@ void test101_SymmetricTree(int *pArray, int nSize) {
     
     printf("Is Sysmmetric tree: %s\n", (bIsSymmetric) ? "Yes" : "No");
     printTail("## End test 101: Is Symmetric Tree");
+}
+
+void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nSize) {
+    printHeader("## Start test 102: Binary tree level order Traversal");
+    CBinaryTree bTree;
+    BT_BFS::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<vector<int>> output = sol.levelOrder(bTree.getRoot());
+    
+    dumpVectorVectorInt(output, "output: ");
+    
+    printTail("## End test 102: Binary tree level order Traversal");
+
 }
 
 
