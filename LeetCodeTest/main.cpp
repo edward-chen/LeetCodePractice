@@ -24,6 +24,7 @@
 #include "C101SymmetricTree.hpp"
 #include "C102_BinaryTreeLevelOrderTraversal.hpp"
 #include "C103BinaryTreeZigzagLevelOrderTraversal.hpp"
+#include "C257BinaryTreePath.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -53,6 +54,7 @@ void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize);
 void test101_SymmetricTree(int *pArray, int nArraySize);
 void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nArraySize);
 void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nArraySize);
+void test257_BinaryTreePath(int *pArray, int nArraySize);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -131,6 +133,10 @@ int main(int argc, const char * argv[]) {
         
         test103_BinaryTreeZigzagLevelOrderTraversal(a,ARRAYSIZE(a, int));
         
+        
+        int pathStr [] = {1, 2, 3, 0, 5};
+        test257_BinaryTreePath(pathStr, ARRAYSIZE(pathStr, int));
+        
         // Test
         testBinaryTreeBasicFunc(array, nSize);
     }
@@ -175,6 +181,22 @@ void dumpVector(vector <int> &input, const char *pszMsg) {
             printf("%d, ", input[i]);
         } else {
             printf("%d", input[i]);
+        }
+    }
+    printf("}\n");
+}
+
+void dumpVector(vector<string> &input, const char *pszMsg) {
+    printf("%s: {", pszMsg);
+    
+    int nSize = input.size();
+    for (int i = 0; i < nSize; i++) {
+        //input.push_back(pArray[i]);
+        
+        if (i != nSize - 1) {
+            printf("%s, ", input[i].c_str());
+        } else {
+            printf("%s", input[i].c_str());
         }
     }
     printf("}\n");
@@ -493,6 +515,22 @@ void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nSize) {
     dumpVectorVectorInt(output, "output: ");
     
     printTail("## End test 103: Binary tree Zigzag level order Traversal");
+    
+}
+
+
+void test257_BinaryTreePath(int *pArray, int nSize) {
+    printHeader("## Start test 257: Binary tree Path");
+    CBinaryTree bTree;
+    BT_Path::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<string> output = sol.binaryTreePaths(bTree.getRoot());
+    
+    dumpVector(output, "output: ");
+    
+    printTail("## End test 257: Binary tree Path");
     
 }
 
