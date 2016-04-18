@@ -25,6 +25,7 @@
 #include "C102_BinaryTreeLevelOrderTraversal.hpp"
 #include "C103BinaryTreeZigzagLevelOrderTraversal.hpp"
 #include "C257BinaryTreePath.hpp"
+#include "C113PathSumII.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -55,6 +56,7 @@ void test101_SymmetricTree(int *pArray, int nArraySize);
 void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nArraySize);
 void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nArraySize);
 void test257_BinaryTreePath(int *pArray, int nArraySize);
+void test113_BinaryTreePathSumII(int *pArray, int nArraySize, int sum);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -136,6 +138,11 @@ int main(int argc, const char * argv[]) {
         
         int pathStr [] = {1, 2, 3, 0, 5};
         test257_BinaryTreePath(pathStr, ARRAYSIZE(pathStr, int));
+        
+        //int pathSumII [] = {5,4,8,11,0,13,4,7,2, 0, 0, 5,1};
+        int pathSumII [] = {1, -2, -3,1,3,-2,0,-1};
+        int sum = 2;
+        test113_BinaryTreePathSumII(pathSumII, ARRAYSIZE(pathSumII, int), sum);
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
@@ -531,7 +538,21 @@ void test257_BinaryTreePath(int *pArray, int nSize) {
     dumpVector(output, "output: ");
     
     printTail("## End test 257: Binary tree Path");
+}
+
+
+void test113_BinaryTreePathSumII(int *pArray, int nSize, int sum) {
+    printHeader("## Start test 113: Binary tree Path Sum II");
+    CBinaryTree bTree;
+    BT_TreePathSum::Solution sol;
     
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<vector <int>> output = sol.pathSum(bTree.getRoot(), sum);
+    
+    dumpVectorVectorInt(output, "output: ");
+    
+    printTail("## End test 113: Binary tree Path Sum II");
 }
 
 void test206_ReverseLinkedList() {
