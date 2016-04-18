@@ -26,6 +26,7 @@
 #include "C103BinaryTreeZigzagLevelOrderTraversal.hpp"
 #include "C257BinaryTreePath.hpp"
 #include "C113PathSumII.hpp"
+#include "C112PathSum.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -57,6 +58,7 @@ void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nArraySize);
 void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nArraySize);
 void test257_BinaryTreePath(int *pArray, int nArraySize);
 void test113_BinaryTreePathSumII(int *pArray, int nArraySize, int sum);
+void test112_BinaryTreePathSum(int *pArray, int nArraySize, int sum);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -139,10 +141,15 @@ int main(int argc, const char * argv[]) {
         int pathStr [] = {1, 2, 3, 0, 5};
         test257_BinaryTreePath(pathStr, ARRAYSIZE(pathStr, int));
         
-        //int pathSumII [] = {5,4,8,11,0,13,4,7,2, 0, 0, 5,1};
+        int pathSum [] = {5,4,8,11,0,13,4,7,2, 0, 0, 0,1};
+        test112_BinaryTreePathSum(pathSum, ARRAYSIZE(pathSum, int), 22);
+        
+        
         int pathSumII [] = {1, -2, -3,1,3,-2,0,-1};
         int sum = 2;
         test113_BinaryTreePathSumII(pathSumII, ARRAYSIZE(pathSumII, int), sum);
+        
+        
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
@@ -554,6 +561,23 @@ void test113_BinaryTreePathSumII(int *pArray, int nSize, int sum) {
     
     printTail("## End test 113: Binary tree Path Sum II");
 }
+
+
+void test112_BinaryTreePathSum(int *pArray, int nSize, int sum) {
+    printHeader("## Start test 112: Binary tree Path Sum");
+    CBinaryTree bTree;
+    BT_PathSum::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    bool bhasPathSum = sol.hasPathSum(bTree.getRoot(), sum);
+    
+    printf("%s path sum\n", bhasPathSum? "!!has" : "@@ no");
+    
+    printTail("## End test 112: Binary tree Path Sum");
+}
+
+
 
 void test206_ReverseLinkedList() {
     printHeader("## Start test 206: reverse Linked list");
