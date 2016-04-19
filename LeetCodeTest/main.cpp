@@ -12,6 +12,7 @@
 #include "C001TwoSum.hpp"
 #include "C002Add2Nums.hpp"
 #include "C003LengthOfLongestSubstring.hpp"
+#include "C006ZigzagConversion.hpp"
 #include "C035SearchInsertPosition.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
@@ -22,6 +23,11 @@
 #include "C226InvertBinaryTree.hpp"
 #include "C100SameTree.hpp"
 #include "C101SymmetricTree.hpp"
+#include "C102_BinaryTreeLevelOrderTraversal.hpp"
+#include "C103BinaryTreeZigzagLevelOrderTraversal.hpp"
+#include "C257BinaryTreePath.hpp"
+#include "C113PathSumII.hpp"
+#include "C112PathSum.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -36,7 +42,7 @@ void initVector(vector<int> &input, const int *pArray);
 void test001_TwoSum(int *pArray, int nArraySize, int target);
 void test002_Add2Nums(int *pA, int *pB, int nSizeA, int nSizeB);
 void test003_LengthOfLongestSubString();
-
+void test006_ZigzagConversion();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -49,6 +55,11 @@ void test145_PostorderTraversalBTree(int *pArray, int nArraySize);
 void test226_InvertBinaryTree(int *pArray, int nArraySize);
 void test100_SameTree(int *pArray, int nPSize, int *qArray, int nQSize);
 void test101_SymmetricTree(int *pArray, int nArraySize);
+void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nArraySize);
+void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nArraySize);
+void test257_BinaryTreePath(int *pArray, int nArraySize);
+void test113_BinaryTreePathSumII(int *pArray, int nArraySize, int sum);
+void test112_BinaryTreePathSum(int *pArray, int nArraySize, int sum);
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -59,6 +70,7 @@ using namespace BinaryTree;
 using namespace std;
 
 void dumpVector(vector <int> &input, const char *pszMsg);
+void dumpVectorVectorInt(vector <vector<int>> &input, const char *pszMsg);
 void dumpArray(const int *pArray, const char *pszMsg, unsigned int nSize);
 
 int main(int argc, const char * argv[]) {
@@ -79,7 +91,13 @@ int main(int argc, const char * argv[]) {
         
         test002_Add2Nums(dataA, dataB, nSizeA, nSizeB);
     }
-        
+    */
+    
+    {
+        test006_ZigzagConversion();
+    }
+    
+    /*
     {
         int array [] = {1, 3, 6, 10, 14};
         int nSize = sizeof(array) / sizeof (int);
@@ -88,6 +106,7 @@ int main(int argc, const char * argv[]) {
     }
     */
     
+    /*
     {
         int array [] = {5, 1, 3, 10, 9, 7};
         int nSize = sizeof(array) / sizeof (int);
@@ -118,9 +137,31 @@ int main(int argc, const char * argv[]) {
         //int c [] = {1, 2, 2, 3, 5, 5, 3};
         test101_SymmetricTree(sysArrayTest, sizeof(sysArrayTest)/sizeof(int));
         
+        
+        int a [] = {1,2,3,4,5};
+        //int b [] = {3, 9, 20, 0, 0, 15, 7};
+        //int c [] = {1,2,3,4,0,0,5};
+        test102_BinaryTreeLevelOrderTraversal(a, ARRAYSIZE(a, int));
+        
+        test103_BinaryTreeZigzagLevelOrderTraversal(a,ARRAYSIZE(a, int));
+        
+        
+        int pathStr [] = {1, 2, 3, 0, 5};
+        test257_BinaryTreePath(pathStr, ARRAYSIZE(pathStr, int));
+        
+        int pathSum [] = {5,4,8,11,0,13,4,7,2, 0, 0, 0,1};
+        test112_BinaryTreePathSum(pathSum, ARRAYSIZE(pathSum, int), 22);
+        
+        
+        int pathSumII [] = {1, -2, -3,1,3,-2,0,-1};
+        int sum = 2;
+        test113_BinaryTreePathSumII(pathSumII, ARRAYSIZE(pathSumII, int), sum);
+        
+        
+        
         // Test
         testBinaryTreeBasicFunc(array, nSize);
-    }
+    }*/
     
      /*
     {
@@ -166,6 +207,49 @@ void dumpVector(vector <int> &input, const char *pszMsg) {
     }
     printf("}\n");
 }
+
+void dumpVector(vector<string> &input, const char *pszMsg) {
+    printf("%s: {", pszMsg);
+    
+    int nSize = input.size();
+    for (int i = 0; i < nSize; i++) {
+        //input.push_back(pArray[i]);
+        
+        if (i != nSize - 1) {
+            printf("%s, ", input[i].c_str());
+        } else {
+            printf("%s", input[i].c_str());
+        }
+    }
+    printf("}\n");
+}
+
+void dumpVectorVectorInt(vector <vector<int>> &input, const char *pszMsg) {
+    int i = 0, j;
+    printf("%s\n", pszMsg);
+    printf("[\n");
+    for (; i < input.size(); i++) {
+        printf("  [");
+        vector<int> innerInput = input[i];
+        for (j = 0; j < innerInput.size(); j++) {
+            printf("%d", innerInput[j]);
+            
+            if (j != innerInput.size() - 1) {
+                printf(",");
+            }
+            
+        }
+        
+        if (i != input.size() - 1) {
+            printf("],\n");
+        } else {
+            printf("]\n");
+        }
+    }
+    
+    printf("]\n");
+}
+
 
 void dumpArray(const int *pArray, const char *pszMsg, unsigned int nSize) {
     printf("%s: {", pszMsg);
@@ -277,8 +361,25 @@ void test003_LengthOfLongestSubString() {
     printf("length of longest sub string (dp) of %s is: %d\n", input.c_str(), length);
     
     printTail("## End test 003: length of longest subString");
-    
+}
 
+void test006_ZigzagConversion() {
+    string input = "ABCDEFGH";
+    int rowsNum = 1;
+    
+    printHeader("## Start test 006: Zigzag Conversion");
+    
+    Zigzag_conversion::Solution sol;
+
+    string output = "";
+    int times = (int) input.size() + 1;
+    
+    for (int i = 0; i < times; i++) {
+        output = sol.convert(input, rowsNum);
+        printf("output string (rows: %d) : %s\n", rowsNum++, output.c_str());
+    }
+    
+    printTail("## End test 006: Zigzag Conversion");
 }
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target) {
@@ -425,6 +526,82 @@ void test101_SymmetricTree(int *pArray, int nSize) {
     printf("Is Sysmmetric tree: %s\n", (bIsSymmetric) ? "Yes" : "No");
     printTail("## End test 101: Is Symmetric Tree");
 }
+
+void test102_BinaryTreeLevelOrderTraversal(int *pArray, int nSize) {
+    printHeader("## Start test 102: Binary tree level order Traversal");
+    CBinaryTree bTree;
+    BT_BFS::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<vector<int>> output = sol.levelOrder(bTree.getRoot());
+    
+    dumpVectorVectorInt(output, "output: ");
+    
+    printTail("## End test 102: Binary tree level order Traversal");
+
+}
+
+void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nSize) {
+    printHeader("## Start test 103: Binary tree Zigzag level order Traversal");
+    CBinaryTree bTree;
+    BT_BFS_Zigzag::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<vector<int>> output = sol.zigzagLevelOrder(bTree.getRoot());
+    
+    dumpVectorVectorInt(output, "output: ");
+    
+    printTail("## End test 103: Binary tree Zigzag level order Traversal");
+    
+}
+
+
+void test257_BinaryTreePath(int *pArray, int nSize) {
+    printHeader("## Start test 257: Binary tree Path");
+    CBinaryTree bTree;
+    BT_Path::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<string> output = sol.binaryTreePaths(bTree.getRoot());
+    
+    dumpVector(output, "output: ");
+    
+    printTail("## End test 257: Binary tree Path");
+}
+
+
+void test113_BinaryTreePathSumII(int *pArray, int nSize, int sum) {
+    printHeader("## Start test 113: Binary tree Path Sum II");
+    CBinaryTree bTree;
+    BT_TreePathSum::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    vector<vector <int>> output = sol.pathSum(bTree.getRoot(), sum);
+    
+    dumpVectorVectorInt(output, "output: ");
+    
+    printTail("## End test 113: Binary tree Path Sum II");
+}
+
+
+void test112_BinaryTreePathSum(int *pArray, int nSize, int sum) {
+    printHeader("## Start test 112: Binary tree Path Sum");
+    CBinaryTree bTree;
+    BT_PathSum::Solution sol;
+    
+    dumpArray(pArray, "input array: ", nSize);
+    bTree.initBinaryTree_LCFormat(pArray, nSize);
+    bool bhasPathSum = sol.hasPathSum(bTree.getRoot(), sum);
+    
+    printf("%s path sum\n", bhasPathSum? "!!has" : "@@ no");
+    
+    printTail("## End test 112: Binary tree Path Sum");
+}
+
 
 
 void test206_ReverseLinkedList() {

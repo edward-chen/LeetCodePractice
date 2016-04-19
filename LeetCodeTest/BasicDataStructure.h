@@ -11,6 +11,8 @@
 
 #include <vector>
 #include <queue>
+#include <stack>
+#include <list>
 #include <algorithm>
 
 /**
