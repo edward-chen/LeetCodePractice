@@ -13,6 +13,7 @@
 #include "C002Add2Nums.hpp"
 #include "C003LengthOfLongestSubstring.hpp"
 #include "C006ZigzagConversion.hpp"
+#include "C007ReverseInteger.hpp"
 #include "C035SearchInsertPosition.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
@@ -43,6 +44,7 @@ void test001_TwoSum(int *pArray, int nArraySize, int target);
 void test002_Add2Nums(int *pA, int *pB, int nSizeA, int nSizeB);
 void test003_LengthOfLongestSubString();
 void test006_ZigzagConversion();
+void test007_ReverseInteger();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -95,6 +97,7 @@ int main(int argc, const char * argv[]) {
     
     {
         test006_ZigzagConversion();
+        test007_ReverseInteger();
     }
     
     /*
@@ -381,6 +384,22 @@ void test006_ZigzagConversion() {
     
     printTail("## End test 006: Zigzag Conversion");
 }
+
+void test007_ReverseInteger() {
+    int input [] = {123, 555, 678, 921, INT32_MAX, -INT32_MAX, -3467, 1534236469};
+    int size = ARRAYSIZE(input, int);
+   
+    printHeader("## Start test 007: Reverse Integer");
+    Reverse_Integer::Solution sol;
+    
+    for (int i = 0; i < size; i++) {
+        int val = sol.reverse(input[i]);
+        printf("[origin, reversed] => [%d, %d]\n", input[i], val);
+    }
+    
+    printTail("## End test 007: Reverse Integer");
+}
+
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target) {
     //int array [] = {1, 3, 6, 10 , 13};
