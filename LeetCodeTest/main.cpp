@@ -12,6 +12,7 @@
 #include "C001TwoSum.hpp"
 #include "C002Add2Nums.hpp"
 #include "C003LengthOfLongestSubstring.hpp"
+#include "C006ZigzagConversion.hpp"
 #include "C035SearchInsertPosition.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
@@ -41,7 +42,7 @@ void initVector(vector<int> &input, const int *pArray);
 void test001_TwoSum(int *pArray, int nArraySize, int target);
 void test002_Add2Nums(int *pA, int *pB, int nSizeA, int nSizeB);
 void test003_LengthOfLongestSubString();
-
+void test006_ZigzagConversion();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -90,7 +91,13 @@ int main(int argc, const char * argv[]) {
         
         test002_Add2Nums(dataA, dataB, nSizeA, nSizeB);
     }
-        
+    */
+    
+    {
+        test006_ZigzagConversion();
+    }
+    
+    /*
     {
         int array [] = {1, 3, 6, 10, 14};
         int nSize = sizeof(array) / sizeof (int);
@@ -99,6 +106,7 @@ int main(int argc, const char * argv[]) {
     }
     */
     
+    /*
     {
         int array [] = {5, 1, 3, 10, 9, 7};
         int nSize = sizeof(array) / sizeof (int);
@@ -153,7 +161,7 @@ int main(int argc, const char * argv[]) {
         
         // Test
         testBinaryTreeBasicFunc(array, nSize);
-    }
+    }*/
     
      /*
     {
@@ -353,8 +361,25 @@ void test003_LengthOfLongestSubString() {
     printf("length of longest sub string (dp) of %s is: %d\n", input.c_str(), length);
     
     printTail("## End test 003: length of longest subString");
-    
+}
 
+void test006_ZigzagConversion() {
+    string input = "ABCDEFGH";
+    int rowsNum = 1;
+    
+    printHeader("## Start test 006: Zigzag Conversion");
+    
+    Zigzag_conversion::Solution sol;
+
+    string output = "";
+    int times = (int) input.size() + 1;
+    
+    for (int i = 0; i < times; i++) {
+        output = sol.convert(input, rowsNum);
+        printf("output string (rows: %d) : %s\n", rowsNum++, output.c_str());
+    }
+    
+    printTail("## End test 006: Zigzag Conversion");
 }
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target) {

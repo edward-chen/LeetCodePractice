@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1AE3361CC5CD6E0011BEBB /* C006ZigzagConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE3341CC5CD6E0011BEBB /* C006ZigzagConversion.cpp */; };
 		4F207A031C916FEE0013D4C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A021C916FEE0013D4C0 /* main.cpp */; };
 		4F207A0B1C91703C0013D4C0 /* C002Add2Nums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */; };
 		4F207A0E1C917AD70013D4C0 /* C001TwoSum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A0C1C917AD70013D4C0 /* C001TwoSum.cpp */; };
@@ -43,6 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F1AE3341CC5CD6E0011BEBB /* C006ZigzagConversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C006ZigzagConversion.cpp; sourceTree = "<group>"; };
+		4F1AE3351CC5CD6E0011BEBB /* C006ZigzagConversion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C006ZigzagConversion.hpp; sourceTree = "<group>"; };
 		4F2079FF1C916FEE0013D4C0 /* LeetCodeTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCodeTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F207A021C916FEE0013D4C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C002Add2Nums.cpp; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				4F46527D1CC4EB13008A886B /* C113PathSumII.hpp */,
 				4F46527F1CC52BC1008A886B /* C112PathSum.cpp */,
 				4F4652801CC52BC1008A886B /* C112PathSum.hpp */,
+				4F1AE3341CC5CD6E0011BEBB /* C006ZigzagConversion.cpp */,
+				4F1AE3351CC5CD6E0011BEBB /* C006ZigzagConversion.hpp */,
 			);
 			path = LeetCodeTest;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				4F709FFF1CA9090A00A36A03 /* C111MinDepthOfBTree.cpp in Sources */,
 				4FEE19A41CB020CC00EA0E39 /* C003LengthOfLongestSubstring.cpp in Sources */,
 				4FF1BFA51CAA4603006F930B /* C094BinaryTreeInorderTraversal.cpp in Sources */,
+				4F1AE3361CC5CD6E0011BEBB /* C006ZigzagConversion.cpp in Sources */,
 				4FEE19AA1CB6B0D900EA0E39 /* C100SameTree.cpp in Sources */,
 				4F709FFC1CA54E4500A36A03 /* C104MaxDepthOfBTree.cpp in Sources */,
 				4FF1BFAE1CAAE553006F930B /* C092ReverseLinkedListII.cpp in Sources */,
