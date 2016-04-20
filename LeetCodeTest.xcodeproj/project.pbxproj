@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F1AE3361CC5CD6E0011BEBB /* C006ZigzagConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE3341CC5CD6E0011BEBB /* C006ZigzagConversion.cpp */; };
 		4F1AE33C1CC684CB0011BEBB /* C007ReverseInteger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE33A1CC684CB0011BEBB /* C007ReverseInteger.cpp */; };
+		4F1AE33F1CC693D80011BEBB /* C008StringToInteger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE33D1CC693D80011BEBB /* C008StringToInteger.cpp */; };
 		4F207A031C916FEE0013D4C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A021C916FEE0013D4C0 /* main.cpp */; };
 		4F207A0B1C91703C0013D4C0 /* C002Add2Nums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */; };
 		4F207A0E1C917AD70013D4C0 /* C001TwoSum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A0C1C917AD70013D4C0 /* C001TwoSum.cpp */; };
@@ -49,6 +50,8 @@
 		4F1AE3351CC5CD6E0011BEBB /* C006ZigzagConversion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C006ZigzagConversion.hpp; sourceTree = "<group>"; };
 		4F1AE33A1CC684CB0011BEBB /* C007ReverseInteger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C007ReverseInteger.cpp; sourceTree = "<group>"; };
 		4F1AE33B1CC684CB0011BEBB /* C007ReverseInteger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C007ReverseInteger.hpp; sourceTree = "<group>"; };
+		4F1AE33D1CC693D80011BEBB /* C008StringToInteger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C008StringToInteger.cpp; sourceTree = "<group>"; };
+		4F1AE33E1CC693D80011BEBB /* C008StringToInteger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C008StringToInteger.hpp; sourceTree = "<group>"; };
 		4F2079FF1C916FEE0013D4C0 /* LeetCodeTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCodeTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F207A021C916FEE0013D4C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C002Add2Nums.cpp; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				4F1AE3351CC5CD6E0011BEBB /* C006ZigzagConversion.hpp */,
 				4F1AE33A1CC684CB0011BEBB /* C007ReverseInteger.cpp */,
 				4F1AE33B1CC684CB0011BEBB /* C007ReverseInteger.hpp */,
+				4F1AE33D1CC693D80011BEBB /* C008StringToInteger.cpp */,
+				4F1AE33E1CC693D80011BEBB /* C008StringToInteger.hpp */,
 			);
 			path = LeetCodeTest;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				4F4652811CC52BC1008A886B /* C112PathSum.cpp in Sources */,
 				4FCCA8381CC0F603002C6979 /* C103BinaryTreeZigzagLevelOrderTraversal.cpp in Sources */,
 				4FF1BFA81CAA49DC006F930B /* C145BinaryTreePostorderTraversal.cpp in Sources */,
+				4F1AE33F1CC693D80011BEBB /* C008StringToInteger.cpp in Sources */,
 				4FEE19A71CB69F2B00EA0E39 /* C226InvertBinaryTree.cpp in Sources */,
 				4F46527E1CC4EB13008A886B /* C113PathSumII.cpp in Sources */,
 				4FC557621CBB81BE00238B52 /* C101SymmetricTree.cpp in Sources */,
