@@ -108,6 +108,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F1AE3401CC758910011BEBB /* BinaryTree */ = {
+			isa = PBXGroup;
+			children = (
+				4FF1BFA31CAA4603006F930B /* C094BinaryTreeInorderTraversal.cpp */,
+				4FF1BFA41CAA4603006F930B /* C094BinaryTreeInorderTraversal.hpp */,
+				4FEE19A81CB6B0D900EA0E39 /* C100SameTree.cpp */,
+				4FEE19A91CB6B0D900EA0E39 /* C100SameTree.hpp */,
+				4FC557601CBB81BE00238B52 /* C101SymmetricTree.cpp */,
+				4FC557611CBB81BE00238B52 /* C101SymmetricTree.hpp */,
+				4FCCA8301CC0933A002C6979 /* C102_BinaryTreeLevelOrderTraversal.cpp */,
+				4FCCA8311CC0933A002C6979 /* C102_BinaryTreeLevelOrderTraversal.hpp */,
+				4FCCA8361CC0F603002C6979 /* C103BinaryTreeZigzagLevelOrderTraversal.cpp */,
+				4FCCA8371CC0F603002C6979 /* C103BinaryTreeZigzagLevelOrderTraversal.hpp */,
+				4F709FFA1CA54E4500A36A03 /* C104MaxDepthOfBTree.cpp */,
+				4F709FFB1CA54E4500A36A03 /* C104MaxDepthOfBTree.hpp */,
+				4F709FFD1CA9090A00A36A03 /* C111MinDepthOfBTree.cpp */,
+				4F709FFE1CA9090A00A36A03 /* C111MinDepthOfBTree.hpp */,
+				4F46527F1CC52BC1008A886B /* C112PathSum.cpp */,
+				4F4652801CC52BC1008A886B /* C112PathSum.hpp */,
+				4F46527C1CC4EB13008A886B /* C113PathSumII.cpp */,
+				4F46527D1CC4EB13008A886B /* C113PathSumII.hpp */,
+				4FF1BFA01CAA3C87006F930B /* C114BinaryTreePreorderTraversal.cpp */,
+				4FF1BFA11CAA3C87006F930B /* C114BinaryTreePreorderTraversal.hpp */,
+				4FF1BFA61CAA49DC006F930B /* C145BinaryTreePostorderTraversal.cpp */,
+				4FF1BFA71CAA49DC006F930B /* C145BinaryTreePostorderTraversal.hpp */,
+				4FEE19A51CB69F2B00EA0E39 /* C226InvertBinaryTree.cpp */,
+				4FEE19A61CB69F2B00EA0E39 /* C226InvertBinaryTree.hpp */,
+				4F4652791CC4D9CA008A886B /* C257BinaryTreePath.cpp */,
+				4F46527A1CC4D9CA008A886B /* C257BinaryTreePath.hpp */,
+				4FF1BF9D1CAA3AFB006F930B /* CBinaryTree.cpp */,
+				4FF1BF9E1CAA3AFB006F930B /* CBinaryTree.hpp */,
+			);
+			name = BinaryTree;
+			sourceTree = "<group>";
+		};
+		4F1AE3411CC7591D0011BEBB /* StringProcess */ = {
+			isa = PBXGroup;
+			children = (
+				4FEE19A21CB020CC00EA0E39 /* C003LengthOfLongestSubstring.cpp */,
+				4FEE19A31CB020CC00EA0E39 /* C003LengthOfLongestSubstring.hpp */,
+				4F1AE3341CC5CD6E0011BEBB /* C006ZigzagConversion.cpp */,
+				4F1AE3351CC5CD6E0011BEBB /* C006ZigzagConversion.hpp */,
+				4F1AE33D1CC693D80011BEBB /* C008StringToInteger.cpp */,
+				4F1AE33E1CC693D80011BEBB /* C008StringToInteger.hpp */,
+				4FC321F91C97F7D6008351B2 /* C035SearchInsertPosition.cpp */,
+				4FC321FA1C97F7D6008351B2 /* C035SearchInsertPosition.hpp */,
+			);
+			name = StringProcess;
+			sourceTree = "<group>";
+		};
+		4F1AE3421CC75E240011BEBB /* List */ = {
+			isa = PBXGroup;
+			children = (
+				4FF1BFAC1CAAE553006F930B /* C092ReverseLinkedListII.cpp */,
+				4FF1BFAD1CAAE553006F930B /* C092ReverseLinkedListII.hpp */,
+				4FF1BFA91CAA8DC9006F930B /* C206ReverseLinkedList.cpp */,
+				4FF1BFAA1CAA8DC9006F930B /* C206ReverseLinkedList.hpp */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		4F1AE3431CC760EA0011BEBB /* Arithmatic */ = {
+			isa = PBXGroup;
+			children = (
+				4F207A0C1C917AD70013D4C0 /* C001TwoSum.cpp */,
+				4F207A0D1C917AD70013D4C0 /* C001TwoSum.hpp */,
+				4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */,
+				4F207A0A1C91703C0013D4C0 /* C002Add2Nums.hpp */,
+				4F1AE33A1CC684CB0011BEBB /* C007ReverseInteger.cpp */,
+				4F1AE33B1CC684CB0011BEBB /* C007ReverseInteger.hpp */,
+			);
+			name = Arithmatic;
+			sourceTree = "<group>";
+		};
 		4F2079F61C916FEE0013D4C0 = {
 			isa = PBXGroup;
 			children = (
@@ -127,54 +201,12 @@
 		4F207A011C916FEE0013D4C0 /* LeetCodeTest */ = {
 			isa = PBXGroup;
 			children = (
-				4FCCA8361CC0F603002C6979 /* C103BinaryTreeZigzagLevelOrderTraversal.cpp */,
-				4FCCA8371CC0F603002C6979 /* C103BinaryTreeZigzagLevelOrderTraversal.hpp */,
+				4F1AE3431CC760EA0011BEBB /* Arithmatic */,
+				4F1AE3421CC75E240011BEBB /* List */,
+				4F1AE3411CC7591D0011BEBB /* StringProcess */,
+				4F1AE3401CC758910011BEBB /* BinaryTree */,
 				4F207A021C916FEE0013D4C0 /* main.cpp */,
-				4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */,
-				4F207A0C1C917AD70013D4C0 /* C001TwoSum.cpp */,
-				4F207A0D1C917AD70013D4C0 /* C001TwoSum.hpp */,
-				4F207A0A1C91703C0013D4C0 /* C002Add2Nums.hpp */,
-				4FC321F91C97F7D6008351B2 /* C035SearchInsertPosition.cpp */,
-				4FC321FA1C97F7D6008351B2 /* C035SearchInsertPosition.hpp */,
-				4F709FFA1CA54E4500A36A03 /* C104MaxDepthOfBTree.cpp */,
-				4F709FFB1CA54E4500A36A03 /* C104MaxDepthOfBTree.hpp */,
-				4F709FFD1CA9090A00A36A03 /* C111MinDepthOfBTree.cpp */,
-				4F709FFE1CA9090A00A36A03 /* C111MinDepthOfBTree.hpp */,
-				4FF1BF9D1CAA3AFB006F930B /* CBinaryTree.cpp */,
-				4FF1BF9E1CAA3AFB006F930B /* CBinaryTree.hpp */,
-				4FF1BFA01CAA3C87006F930B /* C114BinaryTreePreorderTraversal.cpp */,
-				4FF1BFA11CAA3C87006F930B /* C114BinaryTreePreorderTraversal.hpp */,
-				4FF1BFA31CAA4603006F930B /* C094BinaryTreeInorderTraversal.cpp */,
-				4FF1BFA41CAA4603006F930B /* C094BinaryTreeInorderTraversal.hpp */,
-				4FF1BFA61CAA49DC006F930B /* C145BinaryTreePostorderTraversal.cpp */,
-				4FF1BFA71CAA49DC006F930B /* C145BinaryTreePostorderTraversal.hpp */,
-				4FF1BFA91CAA8DC9006F930B /* C206ReverseLinkedList.cpp */,
-				4FF1BFAA1CAA8DC9006F930B /* C206ReverseLinkedList.hpp */,
-				4FF1BFAC1CAAE553006F930B /* C092ReverseLinkedListII.cpp */,
-				4FF1BFAD1CAAE553006F930B /* C092ReverseLinkedListII.hpp */,
 				4FF1BFB01CAAE8EE006F930B /* BasicDataStructure.h */,
-				4FEE19A21CB020CC00EA0E39 /* C003LengthOfLongestSubstring.cpp */,
-				4FEE19A31CB020CC00EA0E39 /* C003LengthOfLongestSubstring.hpp */,
-				4FEE19A51CB69F2B00EA0E39 /* C226InvertBinaryTree.cpp */,
-				4FEE19A61CB69F2B00EA0E39 /* C226InvertBinaryTree.hpp */,
-				4FEE19A81CB6B0D900EA0E39 /* C100SameTree.cpp */,
-				4FEE19A91CB6B0D900EA0E39 /* C100SameTree.hpp */,
-				4FC557601CBB81BE00238B52 /* C101SymmetricTree.cpp */,
-				4FC557611CBB81BE00238B52 /* C101SymmetricTree.hpp */,
-				4FCCA8301CC0933A002C6979 /* C102_BinaryTreeLevelOrderTraversal.cpp */,
-				4FCCA8311CC0933A002C6979 /* C102_BinaryTreeLevelOrderTraversal.hpp */,
-				4F4652791CC4D9CA008A886B /* C257BinaryTreePath.cpp */,
-				4F46527A1CC4D9CA008A886B /* C257BinaryTreePath.hpp */,
-				4F46527C1CC4EB13008A886B /* C113PathSumII.cpp */,
-				4F46527D1CC4EB13008A886B /* C113PathSumII.hpp */,
-				4F46527F1CC52BC1008A886B /* C112PathSum.cpp */,
-				4F4652801CC52BC1008A886B /* C112PathSum.hpp */,
-				4F1AE3341CC5CD6E0011BEBB /* C006ZigzagConversion.cpp */,
-				4F1AE3351CC5CD6E0011BEBB /* C006ZigzagConversion.hpp */,
-				4F1AE33A1CC684CB0011BEBB /* C007ReverseInteger.cpp */,
-				4F1AE33B1CC684CB0011BEBB /* C007ReverseInteger.hpp */,
-				4F1AE33D1CC693D80011BEBB /* C008StringToInteger.cpp */,
-				4F1AE33E1CC693D80011BEBB /* C008StringToInteger.hpp */,
 			);
 			path = LeetCodeTest;
 			sourceTree = "<group>";
