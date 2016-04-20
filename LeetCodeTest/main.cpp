@@ -14,6 +14,7 @@
 #include "C003LengthOfLongestSubstring.hpp"
 #include "C006ZigzagConversion.hpp"
 #include "C007ReverseInteger.hpp"
+#include "C008StringToInteger.hpp"
 #include "C035SearchInsertPosition.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
@@ -45,6 +46,7 @@ void test002_Add2Nums(int *pA, int *pB, int nSizeA, int nSizeB);
 void test003_LengthOfLongestSubString();
 void test006_ZigzagConversion();
 void test007_ReverseInteger();
+void test008_String2Int();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -98,6 +100,7 @@ int main(int argc, const char * argv[]) {
     {
         test006_ZigzagConversion();
         test007_ReverseInteger();
+        test008_String2Int();
     }
     
     /*
@@ -398,6 +401,25 @@ void test007_ReverseInteger() {
     }
     
     printTail("## End test 007: Reverse Integer");
+}
+
+void test008_String2Int() {
+    //string input = "    10522545459";//"2147483648";
+    string input [] = {"2147483648", "    10522545459", "-2147483649","-2147483648", "-2147483647", "2147483647", "++1", "+-1", "-1", "   +1", " 123-", " 1abc"};
+    
+    int size  = ARRAYSIZE(input, string);
+    
+    
+    printHeader("## Start test 008: String to Integer");
+    String2Int::Solution sol;
+    
+    for (int i = 0; i < size; i++) {
+        int val = sol.myAtoi(input[i]);
+        printf("[origin, atoi] => [\"%s\", %d]\n", input[i].c_str(), val);
+    }
+    
+    printTail("## End test 008: String to Integer");
+    
 }
 
 
