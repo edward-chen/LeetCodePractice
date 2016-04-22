@@ -30,11 +30,15 @@
 #include "C257BinaryTreePath.hpp"
 #include "C113PathSumII.hpp"
 #include "C112PathSum.hpp"
+#include "C096UniqueBinarySearchTrees.hpp"
+
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
 
 #define ARRAYSIZE(array, type) sizeof (array) / sizeof(type)
+//#define HEADER_STR(func) "## Start "##func##" : "
+//#define TAIL_STR(func) "## End "##func##" : "
 
 void printHeader(const char *msg);
 void printTail(const char *msg);
@@ -64,6 +68,8 @@ void test103_BinaryTreeZigzagLevelOrderTraversal(int *pArray, int nArraySize);
 void test257_BinaryTreePath(int *pArray, int nArraySize);
 void test113_BinaryTreePathSumII(int *pArray, int nArraySize, int sum);
 void test112_BinaryTreePathSum(int *pArray, int nArraySize, int sum);
+
+void test096_UniqueBinarySearchTrees();
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -95,7 +101,6 @@ int main(int argc, const char * argv[]) {
         
         test002_Add2Nums(dataA, dataB, nSizeA, nSizeB);
     }
-    */
     
     {
         test006_ZigzagConversion();
@@ -103,7 +108,6 @@ int main(int argc, const char * argv[]) {
         test008_String2Int();
     }
     
-    /*
     {
         int array [] = {1, 3, 6, 10, 14};
         int nSize = sizeof(array) / sizeof (int);
@@ -112,7 +116,7 @@ int main(int argc, const char * argv[]) {
     }
     */
     
-    /*
+    ///*
     {
         int array [] = {5, 1, 3, 10, 9, 7};
         int nSize = sizeof(array) / sizeof (int);
@@ -163,11 +167,11 @@ int main(int argc, const char * argv[]) {
         int sum = 2;
         test113_BinaryTreePathSumII(pathSumII, ARRAYSIZE(pathSumII, int), sum);
         
-        
+        test096_UniqueBinarySearchTrees();
         
         // Test
-        testBinaryTreeBasicFunc(array, nSize);
-    }*/
+        //testBinaryTreeBasicFunc(array, nSize);
+    } //*/
     
      /*
     {
@@ -643,6 +647,18 @@ void test112_BinaryTreePathSum(int *pArray, int nSize, int sum) {
     printTail("## End test 112: Binary tree Path Sum");
 }
 
+void test096_UniqueBinarySearchTrees() {
+    printHeader("## start test 096: Unique Binary Search trees");
+    BT_uniqueBSTs::Solution sol;
+    
+    for (int i = 0; i < 5; i++) {
+        int nums = sol.numTrees(i);
+        printf("Tree elements: [%d], get unique BST nums: %d\n", i, nums);
+    }
+    
+    printTail("## End test 096: Unique Binary Search trees");
+
+}
 
 
 void test206_ReverseLinkedList() {
