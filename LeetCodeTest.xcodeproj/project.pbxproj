@@ -11,6 +11,7 @@
 		4F1AE33C1CC684CB0011BEBB /* C007ReverseInteger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE33A1CC684CB0011BEBB /* C007ReverseInteger.cpp */; };
 		4F1AE33F1CC693D80011BEBB /* C008StringToInteger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE33D1CC693D80011BEBB /* C008StringToInteger.cpp */; };
 		4F1AE3461CC775260011BEBB /* C096UniqueBinarySearchTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE3441CC775260011BEBB /* C096UniqueBinarySearchTrees.cpp */; };
+		4F1AE3491CC9C08F0011BEBB /* C098ValidateBinarySearchTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AE3471CC9C08F0011BEBB /* C098ValidateBinarySearchTree.cpp */; };
 		4F207A031C916FEE0013D4C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A021C916FEE0013D4C0 /* main.cpp */; };
 		4F207A0B1C91703C0013D4C0 /* C002Add2Nums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */; };
 		4F207A0E1C917AD70013D4C0 /* C001TwoSum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F207A0C1C917AD70013D4C0 /* C001TwoSum.cpp */; };
@@ -55,6 +56,8 @@
 		4F1AE33E1CC693D80011BEBB /* C008StringToInteger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C008StringToInteger.hpp; sourceTree = "<group>"; };
 		4F1AE3441CC775260011BEBB /* C096UniqueBinarySearchTrees.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C096UniqueBinarySearchTrees.cpp; sourceTree = "<group>"; };
 		4F1AE3451CC775260011BEBB /* C096UniqueBinarySearchTrees.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C096UniqueBinarySearchTrees.hpp; sourceTree = "<group>"; };
+		4F1AE3471CC9C08F0011BEBB /* C098ValidateBinarySearchTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C098ValidateBinarySearchTree.cpp; sourceTree = "<group>"; };
+		4F1AE3481CC9C08F0011BEBB /* C098ValidateBinarySearchTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C098ValidateBinarySearchTree.hpp; sourceTree = "<group>"; };
 		4F2079FF1C916FEE0013D4C0 /* LeetCodeTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCodeTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F207A021C916FEE0013D4C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4F207A091C91703C0013D4C0 /* C002Add2Nums.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C002Add2Nums.cpp; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				4F1AE3441CC775260011BEBB /* C096UniqueBinarySearchTrees.cpp */,
 				4F1AE3451CC775260011BEBB /* C096UniqueBinarySearchTrees.hpp */,
 				4FF1BFB01CAAE8EE006F930B /* BasicDataStructure.h */,
+				4F1AE3471CC9C08F0011BEBB /* C098ValidateBinarySearchTree.cpp */,
+				4F1AE3481CC9C08F0011BEBB /* C098ValidateBinarySearchTree.hpp */,
 			);
 			path = LeetCodeTest;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				4FCCA8381CC0F603002C6979 /* C103BinaryTreeZigzagLevelOrderTraversal.cpp in Sources */,
 				4FF1BFA81CAA49DC006F930B /* C145BinaryTreePostorderTraversal.cpp in Sources */,
 				4F1AE33F1CC693D80011BEBB /* C008StringToInteger.cpp in Sources */,
+				4F1AE3491CC9C08F0011BEBB /* C098ValidateBinarySearchTree.cpp in Sources */,
 				4FEE19A71CB69F2B00EA0E39 /* C226InvertBinaryTree.cpp in Sources */,
 				4F46527E1CC4EB13008A886B /* C113PathSumII.cpp in Sources */,
 				4F1AE3461CC775260011BEBB /* C096UniqueBinarySearchTrees.cpp in Sources */,
