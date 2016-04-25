@@ -31,7 +31,7 @@
 #include "C113PathSumII.hpp"
 #include "C112PathSum.hpp"
 #include "C096UniqueBinarySearchTrees.hpp"
-
+#include "C098ValidateBinarySearchTree.hpp"
 
 #include "C206ReverseLinkedList.hpp"
 #include "C092ReverseLinkedListII.hpp"
@@ -70,6 +70,7 @@ void test113_BinaryTreePathSumII(int *pArray, int nArraySize, int sum);
 void test112_BinaryTreePathSum(int *pArray, int nArraySize, int sum);
 
 void test096_UniqueBinarySearchTrees();
+void test098_ValidateBinarySearchTree();
 
 void test206_ReverseLinkedList();
 void test092_ReverseLinkedListII();
@@ -168,6 +169,7 @@ int main(int argc, const char * argv[]) {
         test113_BinaryTreePathSumII(pathSumII, ARRAYSIZE(pathSumII, int), sum);
         
         test096_UniqueBinarySearchTrees();
+        test098_ValidateBinarySearchTree();
         
         // Test
         //testBinaryTreeBasicFunc(array, nSize);
@@ -657,7 +659,24 @@ void test096_UniqueBinarySearchTrees() {
     }
     
     printTail("## End test 096: Unique Binary Search trees");
+}
 
+
+void test098_ValidateBinarySearchTree() {
+    printHeader("## start test 098: Validate Binary Search tree");
+    BT_ValidateBT::Solution sol;
+    CBinaryTree bTree;
+    
+    //int a [] = {3, 0, 30, 10, 0, 0, 15, 0, 45};
+    int a [] = {3, 1, 5, 0, 2,4, 6};
+    int size = ARRAYSIZE(a, int);
+    
+    bTree.initBinaryTree_LCFormat(a, size);
+    bool bRet = sol.isValidBST(bTree.getRoot());
+    
+    printf("is Validate BST: %s\n", (bRet) ? "true" : "false");
+    
+    printTail("## End test 098: Validate Binary Search tree");
 }
 
 
