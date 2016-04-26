@@ -119,6 +119,8 @@
 			children = (
 				4FF1BFA31CAA4603006F930B /* C094BinaryTreeInorderTraversal.cpp */,
 				4FF1BFA41CAA4603006F930B /* C094BinaryTreeInorderTraversal.hpp */,
+				4F1AE3471CC9C08F0011BEBB /* C098ValidateBinarySearchTree.cpp */,
+				4F1AE3481CC9C08F0011BEBB /* C098ValidateBinarySearchTree.hpp */,
 				4FEE19A81CB6B0D900EA0E39 /* C100SameTree.cpp */,
 				4FEE19A91CB6B0D900EA0E39 /* C100SameTree.hpp */,
 				4FC557601CBB81BE00238B52 /* C101SymmetricTree.cpp */,
@@ -215,8 +217,6 @@
 				4F1AE3441CC775260011BEBB /* C096UniqueBinarySearchTrees.cpp */,
 				4F1AE3451CC775260011BEBB /* C096UniqueBinarySearchTrees.hpp */,
 				4FF1BFB01CAAE8EE006F930B /* BasicDataStructure.h */,
-				4F1AE3471CC9C08F0011BEBB /* C098ValidateBinarySearchTree.cpp */,
-				4F1AE3481CC9C08F0011BEBB /* C098ValidateBinarySearchTree.hpp */,
 			);
 			path = LeetCodeTest;
 			sourceTree = "<group>";
