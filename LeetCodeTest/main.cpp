@@ -15,6 +15,7 @@
 #include "C006ZigzagConversion.hpp"
 #include "C007ReverseInteger.hpp"
 #include "C008StringToInteger.hpp"
+#include "C013Roman2Integer.hpp"
 #include "C035SearchInsertPosition.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
@@ -51,6 +52,7 @@ void test003_LengthOfLongestSubString();
 void test006_ZigzagConversion();
 void test007_ReverseInteger();
 void test008_String2Int();
+void test013_roman2Int();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -102,13 +104,14 @@ int main(int argc, const char * argv[]) {
         
         test002_Add2Nums(dataA, dataB, nSizeA, nSizeB);
     }
-    
+    */
     {
         test006_ZigzagConversion();
         test007_ReverseInteger();
         test008_String2Int();
+        test013_roman2Int();
     }
-    
+    /*
     {
         int array [] = {1, 3, 6, 10, 14};
         int nSize = sizeof(array) / sizeof (int);
@@ -117,7 +120,7 @@ int main(int argc, const char * argv[]) {
     }
     */
     
-    ///*
+    /*
     {
         int array [] = {5, 1, 3, 10, 9, 7};
         int nSize = sizeof(array) / sizeof (int);
@@ -173,7 +176,7 @@ int main(int argc, const char * argv[]) {
         
         // Test
         //testBinaryTreeBasicFunc(array, nSize);
-    } //*/
+    } */
     
      /*
     {
@@ -425,7 +428,23 @@ void test008_String2Int() {
     }
     
     printTail("## End test 008: String to Integer");
+}
+
+void test013_roman2Int() {
+    string input [] = {"DCXXI", "MMMCMXCIX"};
+    int size  = ARRAYSIZE(input, string);
     
+    
+    printHeader("## Start test 013: roman to Integer");
+    roman2Integer::Solution sol;
+    
+    for (int i = 0; i < size; i++) {
+        int val = sol.romanToInt(input[i]);
+        printf("[roman, int] => [\"%s\", %d]\n", input[i].c_str(), val);
+    }
+    
+    printTail("## End test 013: roman to Integer");
+
 }
 
 
