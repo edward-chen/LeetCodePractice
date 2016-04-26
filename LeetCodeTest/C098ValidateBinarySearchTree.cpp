@@ -128,3 +128,55 @@ bool Solution::validForEachRoot(int val, vector<node> &rootVal) {
     
     return bRet;
 }
+
+bool Solution::isValidBSTFunc(TreeNode *root, int nOpt) {
+    bool bRet = false;
+    
+    switch (nOpt) {
+        case E_DFS_PREORDER:
+            bRet = isValidBST(root);
+            break;
+        case E_DFS_INORDER:
+            bRet = isValidBST_Inorder(root);
+        default:
+            printf("Currently, only support preorder and inorder\n");
+            break;
+    }
+
+    return bRet;
+}
+
+bool Solution::isValidBST_Inorder(TreeNode *root) {
+    // 12 ms
+    bool bRet = true;
+    do {
+        if (!root) break;
+        
+        if (!isValidBST_Inorder(root->left) || !isValidForIndorder(root) ||
+            !isValidBST_Inorder(root->right)) {
+            bRet = false;
+            break;
+        }
+    } while (false);
+    
+    return bRet;
+}
+
+bool Solution::isValidForIndorder(TreeNode *root) {
+    bool bRet = true;
+    do {
+        if (!m_prevNode) {
+            m_prevNode = root;
+            break;
+        }
+        
+        if (m_prevNode->val >= root->val) {
+            bRet = false;
+            break;
+        }
+        
+        m_prevNode = root;
+    } while (false);
+    
+    return bRet;
+}

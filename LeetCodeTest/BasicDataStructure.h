@@ -41,4 +41,11 @@ enum USING_FUNC_OPT{
     E_RECURSIVE,
     E_DP,           // Dynamic programming
 };
+
+enum DFS_FUNC_OPT {
+    E_DFS_PREORDER = 0,
+    E_DFS_INORDER,
+    E_DFS_POSTORDER,
+};
+
 #endif /* BasicDataStructure_h */
