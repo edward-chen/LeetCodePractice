@@ -672,9 +672,15 @@ void test098_ValidateBinarySearchTree() {
     int size = ARRAYSIZE(a, int);
     
     bTree.initBinaryTree_LCFormat(a, size);
-    bool bRet = sol.isValidBST(bTree.getRoot());
+    bool bRet = sol.isValidBSTFunc(bTree.getRoot());
+    bTree.destroyTree();
+    printf("is Validate BST: %s by preorder\n", (bRet) ? "true" : "false");
     
-    printf("is Validate BST: %s\n", (bRet) ? "true" : "false");
+    //int b [] = {3, 0, 30, 10, 0, 0, 15, 0, 45};
+    int b [] = {-2147483648,-2147483648};
+    bTree.initBinaryTree_LCFormat(b, ARRAYSIZE(b, int));
+    bRet = sol.isValidBSTFunc(bTree.getRoot(), E_DFS_INORDER);
+    printf("is Validate BST: %s by inorder\n", (bRet) ? "true" : "false");
     
     printTail("## End test 098: Validate Binary Search tree");
 }

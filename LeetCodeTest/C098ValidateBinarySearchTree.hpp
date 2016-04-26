@@ -31,10 +31,15 @@ namespace BT_ValidateBT {
     class Solution{
     private:
         bool validForEachRoot(int val, vector<node> &rootVal);
+        TreeNode *m_prevNode;
         
     public:
+        Solution (): m_prevNode(NULL) {};
         bool isValidBST(TreeNode* root, vector <node> &rootVal);
         bool isValidBST(TreeNode* root);
+        bool isValidBSTFunc(TreeNode *root, int nOpt = E_DFS_PREORDER);
+        bool isValidBST_Inorder(TreeNode *root);
+        bool isValidForIndorder(TreeNode *root);
     };
 }
 
