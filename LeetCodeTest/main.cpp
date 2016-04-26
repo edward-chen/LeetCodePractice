@@ -16,6 +16,7 @@
 #include "C007ReverseInteger.hpp"
 #include "C008StringToInteger.hpp"
 #include "C013Roman2Integer.hpp"
+#include "C012Integer2Roman.hpp"
 #include "C035SearchInsertPosition.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
@@ -53,6 +54,7 @@ void test006_ZigzagConversion();
 void test007_ReverseInteger();
 void test008_String2Int();
 void test013_roman2Int();
+void test012_int2Roman();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -110,6 +112,7 @@ int main(int argc, const char * argv[]) {
         test007_ReverseInteger();
         test008_String2Int();
         test013_roman2Int();
+        test012_int2Roman();
     }
     /*
     {
@@ -444,7 +447,23 @@ void test013_roman2Int() {
     }
     
     printTail("## End test 013: roman to Integer");
+}
 
+
+void test012_int2Roman() {
+    int input [] = {312, 621, 1989, 3999, 1234, 1997, 2008, 2016};
+    int size  = ARRAYSIZE(input, int);
+    
+    
+    printHeader("## Start test 012: Integer to roman");
+    Int2Roman::Solution sol;
+    
+    for (int i = 0; i < size; i++) {
+        string output = sol.intToRoman(input[i]);
+        printf("[int, roman] => [%d, \"%s\"]\n", input[i], output.c_str());
+    }
+    
+    printTail("## End test 012: Integer to roman");
 }
 
 
