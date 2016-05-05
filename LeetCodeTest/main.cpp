@@ -18,6 +18,7 @@
 #include "C013Roman2Integer.hpp"
 #include "C012Integer2Roman.hpp"
 #include "C035SearchInsertPosition.hpp"
+#include "C014LongestCommonPrefix.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
 #include "C104MaxDepthOfBTree.hpp"
@@ -55,6 +56,7 @@ void test007_ReverseInteger();
 void test008_String2Int();
 void test013_roman2Int();
 void test012_int2Roman();
+void test014_longestCommonPrefix();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -113,6 +115,7 @@ int main(int argc, const char * argv[]) {
         test008_String2Int();
         test013_roman2Int();
         test012_int2Roman();
+        test014_longestCommonPrefix();
     }
     /*
     {
@@ -464,6 +467,26 @@ void test012_int2Roman() {
     }
     
     printTail("## End test 012: Integer to roman");
+}
+
+void test014_longestCommonPrefix() {
+    vector <string> input;
+    input.push_back("abab");
+    input.push_back("aba");
+    input.push_back("");
+    
+    printHeader("## Start test 014: Longest Common Prefix");
+    LongestCommonPrefix::Solution sol;
+    
+    
+    dumpVector(input, "input string vector: ");
+
+    string output = sol.longestCommonPrefix(input);
+    
+    printf("common prefix: \"%s\"\n", output.c_str());
+    
+    
+    printTail("## End test 014: Logest Common Prefix");
 }
 
 
