@@ -19,6 +19,7 @@
 #include "C012Integer2Roman.hpp"
 #include "C035SearchInsertPosition.hpp"
 #include "C014LongestCommonPrefix.hpp"
+#include "C009PalindromeNumber.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
 #include "C104MaxDepthOfBTree.hpp"
@@ -57,6 +58,7 @@ void test008_String2Int();
 void test013_roman2Int();
 void test012_int2Roman();
 void test014_longestCommonPrefix();
+void test009_palindromeNumer();
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
@@ -116,6 +118,7 @@ int main(int argc, const char * argv[]) {
         test013_roman2Int();
         test012_int2Roman();
         test014_longestCommonPrefix();
+        test009_palindromeNumer();
     }
     /*
     {
@@ -489,6 +492,25 @@ void test014_longestCommonPrefix() {
     printTail("## End test 014: Logest Common Prefix");
 }
 
+void test009_palindromeNumer() {
+    int array [] = {0, 1, 61, 100 , 131, -1, -161, 1221, 13331, 123456};
+    int size = ARRAYSIZE(array, int);
+    
+    printHeader("## Start test 009: Palindrome Number");
+    PalindromeNumber::Solution sol;
+    
+    for (int i = 0; i < size; i++) {
+        bool bRet = sol.isPalindrome(array[i]);
+        
+        printf ("input: %d, %s a palindrome number\n", array[i], bRet ? "(v) is" :
+                "(x) is not");
+    }
+    
+    
+    printTail("## end test 009: Palindrome Number");
+
+}
+
 
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target) {
     //int array [] = {1, 3, 6, 10 , 13};
@@ -507,7 +529,7 @@ void test035_SearchInsertPosition(int *pArray, int nArraySize, int target) {
     nHitPos = sol.searchInsertBinarySearchVer(input, target);
     printf("pos: %d\n", nHitPos);
 
-    printTail("## end test 0035: search insert position");
+    printTail("## end test 035: search insert position");
 }
 
 void test094_InorderTraversalBTree(int *pArray, int nArraySize) {
