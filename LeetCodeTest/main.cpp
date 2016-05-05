@@ -20,6 +20,7 @@
 #include "C035SearchInsertPosition.hpp"
 #include "C014LongestCommonPrefix.hpp"
 #include "C009PalindromeNumber.hpp"
+#include "C125ValidPalindrome.hpp"
 
 #include "C094BinaryTreeInorderTraversal.hpp"
 #include "C104MaxDepthOfBTree.hpp"
@@ -59,7 +60,7 @@ void test013_roman2Int();
 void test012_int2Roman();
 void test014_longestCommonPrefix();
 void test009_palindromeNumer();
-
+void test125_validPalindrome();
 void test035_SearchInsertPosition(int *pArray, int nArraySize, int target);
 
 
@@ -119,6 +120,7 @@ int main(int argc, const char * argv[]) {
         test012_int2Roman();
         test014_longestCommonPrefix();
         test009_palindromeNumer();
+        test125_validPalindrome();
     }
     /*
     {
@@ -508,6 +510,30 @@ void test009_palindromeNumer() {
     
     
     printTail("## end test 009: Palindrome Number");
+}
+
+void test125_validPalindrome () {
+    vector <string> input;
+    
+    input.push_back(" ");
+    input.push_back("A man, a plan, a canal: Panama");
+    input.push_back(".,"); //truncate as "" <-- answer is true;
+    input.push_back("!");
+    input.push_back("A");
+    input.push_back("ABCD");
+    
+    printHeader("## Start test 125: Valid Palindrome");
+    ValidPalindrome::Solution sol;
+    
+    for (int i = 0; i < input.size(); i++) {
+        bool bRet = sol.isPalindrome(input[i]);
+        
+        printf ("input: \"%s\", \t%s a palindrome string\n", input[i].c_str(),
+                bRet ? "(v) is" :"(x) is not");
+    }
+    
+    
+    printTail("## end test 125: Valid Palindrome");
 
 }
 
