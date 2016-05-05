@@ -14,6 +14,7 @@
 #include <stack>
 #include <list>
 #include <algorithm>
+#include <string>
 
 /**
  * Definition for singly-linked list.
