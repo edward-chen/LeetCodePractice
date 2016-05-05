@@ -219,7 +219,7 @@ void initVector(vector <int> &input, const int *pArray, int nSize) {
 void dumpVector(vector <int> &input, const char *pszMsg) {
     printf("%s: {", pszMsg);
     
-    int nSize = input.size();
+    int nSize = (int) input.size();
     for (int i = 0; i < nSize; i++) {
         //input.push_back(pArray[i]);
         
@@ -235,7 +235,7 @@ void dumpVector(vector <int> &input, const char *pszMsg) {
 void dumpVector(vector<string> &input, const char *pszMsg) {
     printf("%s: {", pszMsg);
     
-    int nSize = input.size();
+    int nSize = (int)input.size();
     for (int i = 0; i < nSize; i++) {
         //input.push_back(pArray[i]);
         
@@ -606,7 +606,7 @@ void test145_PostorderTraversalBTree(int *pArray, int nArraySize) {
 
 void test226_InvertBinaryTree(int *pArray, int nArraySize) {
     CBinaryTree bTree;
-    BT_InvertBinaryTree::Solution sol;
+    //BT_InvertBinaryTree::Solution sol;
     vector <int> output;
     
     printHeader("## Start test 226: Invert BTree");
@@ -615,7 +615,7 @@ void test226_InvertBinaryTree(int *pArray, int nArraySize) {
     printf ("before invert, ");
     bTree.traversal(output, CBinaryTree::BFS);
     
-    TreeNode *pNode = sol.invertTree(bTree.getRoot());
+    //TreeNode *pNode = sol.invertTree(bTree.getRoot());
     //bTree.invertTree(bTree.getRoot());
     
     printf ("after  invert, ");
