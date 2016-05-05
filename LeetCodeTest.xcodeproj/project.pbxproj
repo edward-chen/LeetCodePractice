@@ -20,6 +20,7 @@
 		4F4652811CC52BC1008A886B /* C112PathSum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F46527F1CC52BC1008A886B /* C112PathSum.cpp */; };
 		4F6422EC1CDAE3DC00CCA884 /* C014LongestCommonPrefix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F6422EA1CDAE3DC00CCA884 /* C014LongestCommonPrefix.cpp */; };
 		4F6422EF1CDB377B00CCA884 /* C009PalindromeNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F6422ED1CDB377B00CCA884 /* C009PalindromeNumber.cpp */; };
+		4F6422F21CDB42B300CCA884 /* C125ValidPalindrome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F6422F01CDB42B300CCA884 /* C125ValidPalindrome.cpp */; };
 		4F709FFC1CA54E4500A36A03 /* C104MaxDepthOfBTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F709FFA1CA54E4500A36A03 /* C104MaxDepthOfBTree.cpp */; };
 		4F709FFF1CA9090A00A36A03 /* C111MinDepthOfBTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F709FFD1CA9090A00A36A03 /* C111MinDepthOfBTree.cpp */; };
 		4FB5BB321CCFB9E8002916B6 /* C013Roman2Integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FB5BB301CCFB9E8002916B6 /* C013Roman2Integer.cpp */; };
@@ -78,6 +79,8 @@
 		4F6422EB1CDAE3DC00CCA884 /* C014LongestCommonPrefix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C014LongestCommonPrefix.hpp; sourceTree = "<group>"; };
 		4F6422ED1CDB377B00CCA884 /* C009PalindromeNumber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = C009PalindromeNumber.cpp; path = ../C009PalindromeNumber.cpp; sourceTree = "<group>"; };
 		4F6422EE1CDB377B00CCA884 /* C009PalindromeNumber.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = C009PalindromeNumber.hpp; path = ../C009PalindromeNumber.hpp; sourceTree = "<group>"; };
+		4F6422F01CDB42B300CCA884 /* C125ValidPalindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C125ValidPalindrome.cpp; sourceTree = "<group>"; };
+		4F6422F11CDB42B300CCA884 /* C125ValidPalindrome.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C125ValidPalindrome.hpp; sourceTree = "<group>"; };
 		4F709FFA1CA54E4500A36A03 /* C104MaxDepthOfBTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C104MaxDepthOfBTree.cpp; sourceTree = "<group>"; };
 		4F709FFB1CA54E4500A36A03 /* C104MaxDepthOfBTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = C104MaxDepthOfBTree.hpp; sourceTree = "<group>"; };
 		4F709FFD1CA9090A00A36A03 /* C111MinDepthOfBTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = C111MinDepthOfBTree.cpp; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				4F6422EB1CDAE3DC00CCA884 /* C014LongestCommonPrefix.hpp */,
 				4FC321F91C97F7D6008351B2 /* C035SearchInsertPosition.cpp */,
 				4FC321FA1C97F7D6008351B2 /* C035SearchInsertPosition.hpp */,
+				4F6422F01CDB42B300CCA884 /* C125ValidPalindrome.cpp */,
+				4F6422F11CDB42B300CCA884 /* C125ValidPalindrome.hpp */,
 			);
 			name = StringProcess;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				4FB5BB321CCFB9E8002916B6 /* C013Roman2Integer.cpp in Sources */,
 				4F709FFC1CA54E4500A36A03 /* C104MaxDepthOfBTree.cpp in Sources */,
 				4FF1BFAE1CAAE553006F930B /* C092ReverseLinkedListII.cpp in Sources */,
+				4F6422F21CDB42B300CCA884 /* C125ValidPalindrome.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
